@@ -1,10 +1,13 @@
 
+import Loader from "./components/loader";
+
 const App = () => {
+  
   return (
     <div>
-      <h1>kurtd</h1>
+      <Loader />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
