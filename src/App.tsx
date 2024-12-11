@@ -1,12 +1,11 @@
-
-import Loader from "./components/loader";
+import { ThemeProvider } from "./theme/theme-context";
+import Main from "./layouts/main";
 
 const App = () => {
-  
   return (
-    <div>
-      <Loader />
-    </div>
+    <ThemeProvider>
+      <Main />
+    </ThemeProvider>
   );
 };
 
