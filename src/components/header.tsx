@@ -67,12 +67,15 @@ const Header = () => {
             ))}
           </ul>
 
-          <button
+          <motion.button
+            whileInView={{ y: "0%", opacity: 1 }}
+            initial={{ y: "-35%", opacity: 0 }}
+            transition={{ duration: 0.3, delay: 0.8 }}
             className="block md:hidden"
             onClick={() => alert("open sidebar")}
           >
             <HiOutlineMenuAlt3 className="text-custom-secondary text-3xl" />
-          </button>
+          </motion.button>
         </nav>
       </header>
 

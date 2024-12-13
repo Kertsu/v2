@@ -1,8 +1,7 @@
-import { useState } from "react";
-import Header from "../components/header";
+import { ReactNode, useState } from "react";
 import Loader from "../components/loader";
 
-const Main = () => {
+const Main = ({ children }: { children: ReactNode }) => {
   const [loaderVisible, setLoaderVisible] = useState<boolean>(true);
   const [loaderDone, setLoaderDone] = useState<boolean>(false);
 
@@ -11,7 +10,7 @@ const Main = () => {
     setLoaderVisible(false);
 
     setTimeout(() => {
-      console.log('3grd')
+      console.log("3grd");
       setLoaderDone(true);
     }, 2);
   };
@@ -22,7 +21,7 @@ const Main = () => {
         onLoaderComplete={handleLoaderVisibility}
         loaderVisible={loaderVisible}
       />
-      {loaderDone && <Header />}
+      {loaderDone && children}
     </>
   );
 };
