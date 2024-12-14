@@ -6,11 +6,9 @@ const Main = ({ children }: { children: ReactNode }) => {
   const [loaderDone, setLoaderDone] = useState<boolean>(false);
 
   const handleLoaderVisibility = () => {
-    console.log("setting loader visibility");
     setLoaderVisible(false);
 
     setTimeout(() => {
-      console.log("3grd");
       setLoaderDone(true);
     }, 2);
   };

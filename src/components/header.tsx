@@ -39,15 +39,18 @@ const Header = () => {
   return (
     <>
       <header className="fixed z-20 w-full flex justify-center items-center backdrop-blur-md">
-        <nav className="px-8 py-4 max-w-7xl w-full flex justify-between items-center">
-          <motion.img
-            whileInView={{ y: "0%", opacity: 1 }}
-            initial={{ y: "-35%", opacity: 0 }}
-            transition={{ duration: 0.3, delay: 0.8 }}
-            className="w-14"
-            src="K-transparent.svg"
-            alt="Kurtd Daniel Bigtas logo"
-          />
+        <nav className="px-8 py-4 w-full flex justify-between items-center lg:px-14">
+          <a href="#">
+            <motion.img
+              whileInView={{ y: "0%", opacity: 1 }}
+              initial={{ y: "-35%", opacity: 0 }}
+              transition={{ duration: 0.3, delay: 0.8 }}
+              className="w-14"
+              src="K-transparent.svg"
+              alt="Kurtd Daniel Bigtas logo"
+            />
+          </a>
+
           <ul className="hidden md:flex items-center gap-8">
             {navLinks.map((link: NavLink, index) => (
               <motion.li
@@ -83,7 +86,7 @@ const Header = () => {
         whileInView={{ opacity: 1 }}
         initial={{ opacity: 0 }}
         transition={{ duration: 0.3, delay: 1.5 }}
-        className="hidden md:block fixed left-14 bottom-0"
+        className="hidden xl:block fixed left-14 bottom-0"
       >
         <div className="flex flex-col w-max items-center gap-6">
           <ul className="flex flex-col gap-8 items-center">
