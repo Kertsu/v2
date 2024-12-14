@@ -1,6 +1,7 @@
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { SiFacebook, SiGithub, SiInstagram } from "react-icons/si";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 interface NavLink {
   href: string;
@@ -36,13 +37,36 @@ const socmedLinks = [
 ];
 
 const Header = () => {
+  const [isHeaderVisible, setIsHeaderVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY < lastScrollY) {
+        setIsHeaderVisible(true);
+      } else {
+        setIsHeaderVisible(false);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
+
   return (
     <>
-      <header className="fixed z-20 w-full flex justify-center items-center backdrop-blur-md">
+      <header
+        className={`fixed z-20 w-full flex justify-center items-center backdrop-blur-md transition-all ${
+          isHeaderVisible ? "translate-y-0" : "-translate-y-full"
+        }`}
+      >
         <nav className="px-8 py-4 w-full flex justify-between items-center lg:px-14">
           <a href="#">
             <motion.img
-              whileInView={{ y: "0%", opacity: 1 }}
+              animate={{ y: "0%", opacity: 1 }}
               initial={{ y: "-35%", opacity: 0 }}
               transition={{ duration: 0.3, delay: 0.8 }}
               className="w-14"
@@ -55,7 +79,7 @@ const Header = () => {
             {navLinks.map((link: NavLink, index) => (
               <motion.li
                 key={index}
-                whileInView={{ y: "0%", opacity: 1 }}
+                animate={{ y: "0%", opacity: 1 }}
                 initial={{ y: "-45%", opacity: 0 }}
                 transition={{ duration: 0.3, delay: link.transitionDelay }}
               >
@@ -63,7 +87,6 @@ const Header = () => {
                   className="text-custom-secondary hover:text-custom-primary/80 text-sm"
                   href={link.href}
                 >
-                  <span className="text-custom-primary/80">0{index + 1}.</span>{" "}
                   {link.label}
                 </a>
               </motion.li>
@@ -71,7 +94,7 @@ const Header = () => {
           </ul>
 
           <motion.button
-            whileInView={{ y: "0%", opacity: 1 }}
+            animate={{ y: "0%", opacity: 1 }}
             initial={{ y: "-35%", opacity: 0 }}
             transition={{ duration: 0.3, delay: 0.8 }}
             className="block md:hidden"
@@ -83,7 +106,7 @@ const Header = () => {
       </header>
 
       <motion.div
-        whileInView={{ opacity: 1 }}
+        animate={{ opacity: 1 }}
         initial={{ opacity: 0 }}
         transition={{ duration: 0.3, delay: 1.5 }}
         className="hidden xl:block fixed left-14 bottom-0"
