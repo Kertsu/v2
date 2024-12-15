@@ -1,7 +1,7 @@
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { SiFacebook, SiGithub, SiInstagram } from "react-icons/si";
 import { motion } from "framer-motion";
-import { MouseEventHandler, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 interface NavLink {
   targetId: string
@@ -38,7 +38,7 @@ const socmedLinks = [
 ];
 
 const Header = () => {
-  const handleScroll = (e: Event, targetId: string) => {
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault();
     const targetElement = document.getElementById(targetId);
     if (targetElement) {
@@ -94,7 +94,7 @@ const Header = () => {
                 initial={{ y: "-45%", opacity: 0 }}
                 transition={{ duration: 0.3, delay: link.transitionDelay }}
               >
-                <a onClick={(e: any) => handleScroll(e, link.targetId)}
+                <a onClick={(e) => handleScroll(e, link.targetId)}
                   className="text-custom-secondary hover:text-custom-primary/80 text-sm"
                   href={link.href}
                 >
