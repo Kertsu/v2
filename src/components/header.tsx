@@ -59,14 +59,14 @@ const Header = () => {
   return (
     <>
       <header
-        className={`fixed z-20 w-full flex justify-center items-center backdrop-blur-md transition-all ${
+        className={`fixed z-20 w-full flex justify-center items-center backdrop-blur-md transition-all shadow-lg ${
           isHeaderVisible ? "translate-y-0" : "-translate-y-full"
         }`}
       >
         <nav className="px-8 py-4 w-full flex justify-between items-center lg:px-14">
           <a href="#">
             <motion.img
-              animate={{ y: "0%", opacity: 1 }}
+              viewport={{ once: true }} whileInView={{ y: "0%", opacity: 1 }}
               initial={{ y: "-35%", opacity: 0 }}
               transition={{ duration: 0.3, delay: 0.8 }}
               className="w-14"
@@ -79,7 +79,7 @@ const Header = () => {
             {navLinks.map((link: NavLink, index) => (
               <motion.li
                 key={index}
-                animate={{ y: "0%", opacity: 1 }}
+                viewport={{ once: true }} whileInView={{ y: "0%", opacity: 1 }}
                 initial={{ y: "-45%", opacity: 0 }}
                 transition={{ duration: 0.3, delay: link.transitionDelay }}
               >
@@ -94,7 +94,7 @@ const Header = () => {
           </ul>
 
           <motion.button
-            animate={{ y: "0%", opacity: 1 }}
+            viewport={{ once: true }} whileInView={{ y: "0%", opacity: 1 }}
             initial={{ y: "-35%", opacity: 0 }}
             transition={{ duration: 0.3, delay: 0.8 }}
             className="block md:hidden"
@@ -106,10 +106,10 @@ const Header = () => {
       </header>
 
       <motion.div
-        animate={{ opacity: 1 }}
+        viewport={{ once: true }} whileInView={{ opacity: 1 }}
         initial={{ opacity: 0 }}
         transition={{ duration: 0.3, delay: 1.5 }}
-        className="hidden xl:block fixed left-14 bottom-0"
+        className="hidden fixed left-14 bottom-0 z-10 xl:block"
       >
         <div className="flex flex-col w-max items-center gap-6">
           <ul className="flex flex-col gap-8 items-center">
@@ -122,7 +122,7 @@ const Header = () => {
             ))}
           </ul>
 
-          <div className="h-[90px] w-[1px] border"></div>
+          <div className="h-[90px] w-[.5px] border"></div>
         </div>
       </motion.div>
     </>

@@ -23,6 +23,7 @@ const Loader = ({ loaderVisible, onLoaderComplete }: LoaderProps) => {
           initial={{ y: "-35%", opacity: 0 }}
           animate={{ y: "0%", opacity: 1 }}
           exit={{ opacity: 0, scale: 0 }}
+          viewport={{ once: true }}
           transition={{
             duration: 0.8,
             ease: "easeInOut",

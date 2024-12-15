@@ -1,0 +1,61 @@
+import { motion } from "framer-motion";
+
+const AboutMeSection = () => {
+  return (
+    <>
+      <motion.section
+        id="about"
+        className="relative flex items-center mx-auto max-w-[80rem] flex-col w-full justify-start pt-40 md:px-16 md:pt-0 px-8 "
+      >
+        <div className="w-full flex flex-col min-h-screen justify-center gap-2 max-w-[80rem] xl:gap-6">
+          {/* <AboutMeSvg /> */}
+          <div className="flex flex-col w-full gap-8 p-6 rounded-md"
+          style={{backgroundImage: 'url(about-me.svg)'}}>
+            <div className="w-full flex justify-start items-center">
+              <h1 className="text-2xl font-semibold md:text-3xl">
+                About Me{" "}
+                <a
+                  href="https://www.16personalities.com/profiles/enfj-a/m/hqgud0imi"
+                  target="_blank"
+                  className="bg-gradient-to-t from-[#007bff] to-[#007bff] bg-clip-text text-transparent"
+                >
+                  ( ENFJ-A )
+                </a>
+              </h1>
+              <div className="hidden flex-1 bg-white/50 h-[1px] md:flex ml-4"></div>
+            </div>
+            <div className="w-full flex flex-col justify-start align-center relative gap-4 lg:flex-row lg:items-center">
+              <div className="w-full lg:w-[70%]">
+                <p className="text-sm text-custom-secondary md:text-base">
+                  Hello! My name is Kurtd Daniel Bigtas. My interest in web
+                  development started back in my second year of college (2022),
+                  and it has grown significantly since then.
+                </p>
+                <br />
+                <p className="text-sm text-custom-secondary md:text-base">
+                  Overtime, I realized that bringing ideas to life is
+                  satisfying, driving me to learn more and pursue my passion.
+                  Little did I know, this would become one of the most exciting
+                  and rewarding decisions of my life.
+                </p>
+                <br />
+                <p className="text-sm text-custom-secondary md:text-base">
+                  Fast-forward to today, I am on my journey to master the art of
+                  web development while exploring various technologies to stay
+                  current and competitive in the industry.
+                </p>
+              </div>
+              <img
+                src="K-transparent-muted.svg"
+                className="mx-auto rounded-md h-full w-full absolute top-0 right-0 blur-[8px] md:blur-none md:static md:w-1/2 lg:w-1/4"
+                alt="Kurtd Daniel Bigtas"
+              />
+            </div>
+          </div>
+        </div>
+      </motion.section>
+    </>
+  );
+};
+
+export default AboutMeSection;

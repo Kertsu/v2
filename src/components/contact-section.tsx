@@ -1,10 +1,10 @@
 import { motion } from "motion/react";
-const Contact = () => {
+const ContactSection = () => {
   return (
     <motion.section id="#contact" className="border border-pink-500 mx-auto">
-      <h1>Contact</h1>
+      <h1>ContactSection</h1>
     </motion.section>
   );
 };
 
-export default Contact;
+export default ContactSection;
