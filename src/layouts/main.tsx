@@ -1,4 +1,4 @@
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import Loader from "../components/loader";
 
 const Main = ({ children }: { children: ReactNode }) => {
@@ -12,6 +12,18 @@ const Main = ({ children }: { children: ReactNode }) => {
       setLoaderDone(true);
     }, 2);
   };
+
+  useEffect(() => {
+    const hash = window.location.hash
+
+    if (hash) {
+      const targetElement = document.querySelector(hash);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth", });
+      }
+    }
+
+  }, [])
 
   return (
     <>

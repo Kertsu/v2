@@ -1,18 +1,19 @@
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { SiFacebook, SiGithub, SiInstagram } from "react-icons/si";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { MouseEventHandler, useEffect, useState } from "react";
 
 interface NavLink {
+  targetId: string
   href: string;
   label: string;
   transitionDelay: number;
 }
 
 const navLinks: NavLink[] = [
-  { href: "#about", label: "About", transitionDelay: 0.6 },
-  { href: "#featured", label: "Featured", transitionDelay: 0.7 },
-  { href: "#contact", label: "Contact", transitionDelay: 0.8 },
+  { targetId: 'about', href: "#about", label: "About", transitionDelay: 0.6 },
+  { targetId: 'featured', href: "#featured", label: "Featured", transitionDelay: 0.7 },
+  { targetId: 'contact', href: "#contact", label: "Contact", transitionDelay: 0.8 },
 ];
 
 const socmedLinks = [
@@ -37,6 +38,14 @@ const socmedLinks = [
 ];
 
 const Header = () => {
+  const handleScroll = (e: Event, targetId: string) => {
+    e.preventDefault();
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -85,7 +94,7 @@ const Header = () => {
                 initial={{ y: "-45%", opacity: 0 }}
                 transition={{ duration: 0.3, delay: link.transitionDelay }}
               >
-                <a
+                <a onClick={(e: any) => handleScroll(e, link.targetId)}
                   className="text-custom-secondary hover:text-custom-primary/80 text-sm"
                   href={link.href}
                 >
