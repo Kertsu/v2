@@ -10,9 +10,9 @@ interface NavLink {
 }
 
 const navLinks: NavLink[] = [
-  { href: "#about", label: "About", transitionDelay: 1.1 },
-  { href: "#featured", label: "Featured", transitionDelay: 1.2 },
-  { href: "#contact", label: "Contact", transitionDelay: 1.3 },
+  { href: "#about", label: "About", transitionDelay: 0.6 },
+  { href: "#featured", label: "Featured", transitionDelay: 0.7 },
+  { href: "#contact", label: "Contact", transitionDelay: 0.8 },
 ];
 
 const socmedLinks = [
@@ -69,7 +69,7 @@ const Header = () => {
               viewport={{ once: true }}
               whileInView={{ y: "0%", opacity: 1 }}
               initial={{ y: "-35%", opacity: 0 }}
-              transition={{ duration: 0.3, delay: 0.8 }}
+              transition={{ duration: 0.3, delay: 0.5 }}
               className="w-14"
               src="K-transparent.svg"
               alt="Kurtd Daniel Bigtas logo"
@@ -112,7 +112,7 @@ const Header = () => {
         viewport={{ once: true }}
         whileInView={{ opacity: 1 }}
         initial={{ opacity: 0 }}
-        transition={{ duration: 0.3, delay: 1.5 }}
+        transition={{ duration: 0.3, delay: 0.8 }}
         className="hidden fixed left-14 bottom-0 z-10 xl:block"
       >
         <div className="flex flex-col w-max items-center gap-6">

@@ -77,8 +77,8 @@ const AboutMeSection = () => {
               </div>
               <motion.img
                 viewport={{ once: true }}
-                whileInView={{  opacity: 1 }}
-                initial={{  opacity: 0 }}
+                whileInView={{opacity: 1, y: "0%",}}
+                initial={{ opacity: 0, y: '45%' }}
                 transition={{ duration: 0.5, delay: 1 }}
                 src="K-transparent-muted.svg"
                 className="mx-auto rounded-md h-full w-full absolute top-0 right-0 blur-[8px] md:blur-none md:static md:w-1/2 lg:w-1/4"

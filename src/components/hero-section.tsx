@@ -8,7 +8,7 @@ const HeroSection = () => {
             viewport={{ once: true }}
             whileInView={{ y: "0%", opacity: 1 }}
             initial={{ y: "45%", opacity: 0 }}
-            transition={{ duration: 0.3, delay: 1.6 }}
+            transition={{ duration: 0.3, delay: .8 }}
             className="text-base tracking-widest font-semibold md:text-lg"
           >
             Hi there! I am
@@ -17,7 +17,7 @@ const HeroSection = () => {
             viewport={{ once: true }}
             whileInView={{ y: "0%", opacity: 1 }}
             initial={{ y: "45%", opacity: 0 }}
-            transition={{ duration: 0.3, delay: 1.7 }}
+            transition={{ duration: 0.3, delay: 1 }}
             className="text-3xl font-bold md:text-6xl xl:text-7xl"
           >
             Kurtd Daniel Bigtas.
@@ -26,7 +26,7 @@ const HeroSection = () => {
             viewport={{ once: true }}
             whileInView={{ y: "0%", opacity: 1 }}
             initial={{ y: "45%", opacity: 0 }}
-            transition={{ duration: 0.3, delay: 1.8 }}
+            transition={{ duration: 0.3, delay: 1.2 }}
             className="text-3xl font-bold text-custom-secondary bg-gradient-to-t from-[#007bff] to-[#007bff] bg-clip-text text-transparent leading-[1.2] md:text-6xl xl:text-7xl"
           >
             I turn caffeine into websites.
@@ -35,7 +35,7 @@ const HeroSection = () => {
             viewport={{ once: true }}
             whileInView={{ y: "0%", opacity: 1 }}
             initial={{ y: "45%", opacity: 0 }}
-            transition={{ duration: 0.3, delay: 1.8 }}
+            transition={{ duration: 0.3, delay: 1.3 }}
             className="w-full text-sm mt-4 text-custom-secondary md:text-base md:max-w-[90%] xl:max-w-[50%]"
           >
             I aspire to be a Software Engineer with a passion in building
