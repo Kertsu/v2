@@ -66,7 +66,8 @@ const Header = () => {
         <nav className="px-8 py-4 w-full flex justify-between items-center lg:px-14">
           <a href="#">
             <motion.img
-              viewport={{ once: true }} whileInView={{ y: "0%", opacity: 1 }}
+              viewport={{ once: true }}
+              whileInView={{ y: "0%", opacity: 1 }}
               initial={{ y: "-35%", opacity: 0 }}
               transition={{ duration: 0.3, delay: 0.8 }}
               className="w-14"
@@ -79,7 +80,8 @@ const Header = () => {
             {navLinks.map((link: NavLink, index) => (
               <motion.li
                 key={index}
-                viewport={{ once: true }} whileInView={{ y: "0%", opacity: 1 }}
+                viewport={{ once: true }}
+                whileInView={{ y: "0%", opacity: 1 }}
                 initial={{ y: "-45%", opacity: 0 }}
                 transition={{ duration: 0.3, delay: link.transitionDelay }}
               >
@@ -94,7 +96,8 @@ const Header = () => {
           </ul>
 
           <motion.button
-            viewport={{ once: true }} whileInView={{ y: "0%", opacity: 1 }}
+            viewport={{ once: true }}
+            whileInView={{ y: "0%", opacity: 1 }}
             initial={{ y: "-35%", opacity: 0 }}
             transition={{ duration: 0.3, delay: 0.8 }}
             className="block md:hidden"
@@ -106,7 +109,8 @@ const Header = () => {
       </header>
 
       <motion.div
-        viewport={{ once: true }} whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        whileInView={{ opacity: 1 }}
         initial={{ opacity: 0 }}
         transition={{ duration: 0.3, delay: 1.5 }}
         className="hidden fixed left-14 bottom-0 z-10 xl:block"

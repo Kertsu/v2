@@ -15,11 +15,12 @@ const Main = ({ children }: { children: ReactNode }) => {
 
   return (
     <>
-      <Loader
+      {/* <Loader
         onLoaderComplete={handleLoaderVisibility}
         loaderVisible={loaderVisible}
       />
-      {loaderDone && children}
+      {loaderDone && children} */}
+      {children}
     </>
   );
 };

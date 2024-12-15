@@ -1,15 +1,12 @@
 import { motion } from "framer-motion";
-import { HeroSvg } from "./svg";
 const HeroSection = () => {
   return (
     <>
-      <HeroSvg />
-      <motion.section
-        className="relative flex items-center max-w-[80rem] px-8 mx-auto flex-col w-full justify-start md:px-16"
-      >
+      <motion.section className="relative flex items-center max-w-[80rem] px-8 mx-auto flex-col w-full justify-start md:px-16">
         <div className="w-full flex flex-col min-h-screen justify-center gap-2 xl:gap-6">
           <motion.h3
-            viewport={{ once: true }} whileInView={{ y: "0%", opacity: 1 }}
+            viewport={{ once: true }}
+            whileInView={{ y: "0%", opacity: 1 }}
             initial={{ y: "45%", opacity: 0 }}
             transition={{ duration: 0.3, delay: 1.6 }}
             className="text-base tracking-widest font-semibold md:text-lg"
@@ -17,7 +14,8 @@ const HeroSection = () => {
             Hi there! I am
           </motion.h3>
           <motion.h1
-            viewport={{ once: true }} whileInView={{ y: "0%", opacity: 1 }}
+            viewport={{ once: true }}
+            whileInView={{ y: "0%", opacity: 1 }}
             initial={{ y: "45%", opacity: 0 }}
             transition={{ duration: 0.3, delay: 1.7 }}
             className="text-3xl font-bold md:text-6xl xl:text-7xl"
@@ -25,7 +23,8 @@ const HeroSection = () => {
             Kurtd Daniel Bigtas.
           </motion.h1>
           <motion.h1
-            viewport={{ once: true }} whileInView={{ y: "0%", opacity: 1 }}
+            viewport={{ once: true }}
+            whileInView={{ y: "0%", opacity: 1 }}
             initial={{ y: "45%", opacity: 0 }}
             transition={{ duration: 0.3, delay: 1.8 }}
             className="text-3xl font-bold text-custom-secondary bg-gradient-to-t from-[#007bff] to-[#007bff] bg-clip-text text-transparent leading-[1.2] md:text-6xl xl:text-7xl"
@@ -33,7 +32,8 @@ const HeroSection = () => {
             I turn caffeine into websites.
           </motion.h1>
           <motion.p
-            viewport={{ once: true }} whileInView={{ y: "0%", opacity: 1 }}
+            viewport={{ once: true }}
+            whileInView={{ y: "0%", opacity: 1 }}
             initial={{ y: "45%", opacity: 0 }}
             transition={{ duration: 0.3, delay: 1.8 }}
             className="w-full text-sm mt-4 text-custom-secondary md:text-base md:max-w-[90%] xl:max-w-[50%]"
