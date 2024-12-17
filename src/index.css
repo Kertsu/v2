@@ -4,7 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
-::selection{
+::selection {
   background: #007bff;
   color: white;
 }
@@ -24,4 +24,42 @@ img {
 section {
   min-height: 100vh;
   height: 100vh;
+}
+
+.light::before,
+.light::after {
+  content: "";
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  inset: 0;
+  opacity: 0;
+  border-radius: inherit;
+}
+.light::before {
+  background: #007bff;
+  box-shadow: 0 0 2px 1px #3291ff40;
+  opacity: 1;
+}
+.light::after {
+  background: #fff;
+  opacity: 1;
+  box-shadow: 0 0 2px 2px #007bff, 0 0 2px 1px #3291ff40;
+}
+
+.about-me-container {
+  background: linear-gradient(120deg, #27272741 0.6%, #171717);
+}
+
+@media screen and (min-width: 1920px) {
+  .light::before {
+    background: #007bff;
+    box-shadow: 0 0 2px 1px #3291ff40;
+    opacity: 1;
+  }
+  .light::after {
+    background: #fff;
+    opacity: 1;
+    box-shadow: 0 0 3px 3px #007bff, 0 0 2px 1px #3291ff40;
+  }
 }

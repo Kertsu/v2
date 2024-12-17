@@ -1,16 +1,8 @@
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 
 const FeaturedSection = () => {
   return (
-    <motion.section
-      viewport={{ once: true }} whileInView={{ y: "0%", opacity: 1 }}
-      initial={{ y: "45%", opacity: 0 }}
-      transition={{ duration: 0.3 }}
-      id="#featured"
-      className="border border-yellow-500 mx-auto"
-    >
-      <h1>FeaturedSection</h1>
-    </motion.section>
+    <motion.section className="flex items-center max-w-[80rem] px-8 mx-auto flex-col w-full justify-start md:px-16"></motion.section>
   );
 };
 

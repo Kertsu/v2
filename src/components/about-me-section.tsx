@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Lights from "./lights";
 
 const AboutMeSection = () => {
   return (
@@ -8,14 +9,12 @@ const AboutMeSection = () => {
         className="relative flex items-center mx-auto max-w-[80rem] flex-col w-full justify-start pt-40 md:px-16 md:pt-0 px-8 "
       >
         <div className="w-full flex flex-col min-h-screen justify-center gap-2 max-w-[80rem] xl:gap-6">
-          {/* <AboutMeSvg /> */}
           <motion.div
             viewport={{ once: true }}
             whileInView={{ opacity: 1 }}
             initial={{ opacity: 0 }}
             transition={{ duration: 0.3, delay: 0.5 }}
-            className="flex flex-col w-full gap-8 p-6 rounded-md"
-            style={{ backgroundImage: "url(about-me.svg)" }}
+            className="flex flex-col w-full gap-8 p-6 rounded-md about-me-container"
           >
             <motion.div
               viewport={{ once: true }}
@@ -36,8 +35,8 @@ const AboutMeSection = () => {
               </h1>
               <div className="hidden flex-1 bg-white/50 h-[1px] md:flex ml-4"></div>
             </motion.div>
-            <div className="w-full flex flex-col justify-start align-center relative gap-4 lg:flex-row lg:items-center">
-              <div className="w-full lg:w-[70%]">
+            <div className="w-full flex flex-col-reverse justify-start align-center relative gap-4 lg:items-center xl:gap-8">
+              <div className="w-full">
                 <motion.p
                   viewport={{ once: true }}
                   whileInView={{ y: "0%", opacity: 1 }}
@@ -75,7 +74,7 @@ const AboutMeSection = () => {
                   current and competitive in the industry.
                 </motion.p>
               </div>
-              <motion.img
+              {/* <motion.img
                 viewport={{ once: true }}
                 whileInView={{opacity: 1, y: "0%",}}
                 initial={{ opacity: 0, y: '45%' }}
@@ -83,7 +82,9 @@ const AboutMeSection = () => {
                 src="K-transparent-muted.svg"
                 className="mx-auto rounded-md h-full w-full absolute top-0 right-0 blur-[8px] md:blur-none md:static md:w-1/2 lg:w-1/4"
                 alt="Kurtd Daniel Bigtas"
-              />
+              /> */}
+
+              <Lights />
             </div>
           </motion.div>
         </div>
