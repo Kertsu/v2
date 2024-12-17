@@ -47,10 +47,6 @@ section {
   box-shadow: 0 0 2px 2px #007bff, 0 0 2px 1px #3291ff40;
 }
 
-.about-me-container {
-  background: linear-gradient(120deg, #27272741 0.6%, #171717);
-}
-
 @media screen and (min-width: 1920px) {
   .light::before {
     background: #007bff;

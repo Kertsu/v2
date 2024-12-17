@@ -6,15 +6,15 @@ const AboutMeSection = () => {
     <>
       <motion.section
         id="about"
-        className="relative flex items-center mx-auto max-w-[80rem] flex-col w-full justify-start pt-40 md:px-16 md:pt-0 px-8 "
+        className="relative flex items-center mx-auto max-w-[80rem] flex-col w-full justify-start pt-40 md:px-16 md:pt-0 px-8"
       >
-        <div className="w-full flex flex-col min-h-screen justify-center gap-2 max-w-[80rem] xl:gap-6">
+        <div className="w-full flex flex-col min-h-screen justify-center gap-2 max-w-[80rem] xl:gap-6 ">
           <motion.div
             viewport={{ once: true }}
             whileInView={{ opacity: 1 }}
             initial={{ opacity: 0 }}
             transition={{ duration: 0.3, delay: 0.5 }}
-            className="flex flex-col w-full gap-8 p-6 rounded-md about-me-container"
+            className="flex flex-col w-full gap-8 p-6 rounded-md bg-gradient-to-b from-[#27272741_0.6%] to-[#171717] shadow-[inset_0_0_10px_#ffffff1a]"
           >
             <motion.div
               viewport={{ once: true }}
