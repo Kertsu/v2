@@ -1,0 +1,36 @@
+.light::before,
+.light::after {
+  content: "";
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  inset: 0;
+  opacity: 0;
+  border-radius: inherit;
+  transition: all 1s ease;
+}
+.light::before {
+  background: #007bff;
+  box-shadow: 0 0 2px 1px #3291ff40;
+  opacity: 1;
+}
+.light::after {
+  background: #fff;
+  opacity: 1;
+  box-shadow: 0 0 2px 2px #007bff, 0 0 2px 1px #3291ff40;
+}
+
+@media screen and (min-width: 1920px) {
+  .light::before {
+    background: #007bff;
+    box-shadow: 0 0 3px 2px #3291ff40;
+    opacity: 1;
+  }
+  .light::after {
+    background: #fff;
+    opacity: 1;
+    box-shadow: 0 0 3px 3px #007bff, 0 0 3px 2px #3291ff40;
+  }
+}
+
+/* bg-[linear-gradient(to_right,#484848,transparent_1px),linear-gradient(to_bottom,#484848,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_60%_at_60%_0%,#000_80%,transparent_110%)] */

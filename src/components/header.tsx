@@ -72,7 +72,7 @@ const Header = () => {
           isHeaderVisible ? "translate-y-0" : "-translate-y-full"
         }`}
       >
-        <nav className="px-8 py-4 w-full flex justify-between items-center lg:px-14">
+        <nav className="px-8 py-4 w-full flex justify-between items-center max-w-[1440px] lg:px-14">
           <a href="#">
             <motion.img
               viewport={{ once: true }}

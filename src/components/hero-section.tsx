@@ -3,7 +3,7 @@ const HeroSection = () => {
   return (
     <>
       <motion.section className="relative flex items-center max-w-[80rem] px-8 mx-auto flex-col w-full justify-start md:px-16">
-        <div className="w-full flex flex-col min-h-screen justify-center gap-2 xl:gap-6">
+        <div className="w-full flex flex-col min-h-screen justify-center gap-2 xl:gap-3">
           <motion.h3
             viewport={{ once: true }}
             whileInView={{ y: "0%", opacity: 1 }}
@@ -18,7 +18,7 @@ const HeroSection = () => {
             whileInView={{ y: "0%", opacity: 1 }}
             initial={{ y: "45%", opacity: 0 }}
             transition={{ duration: 0.3, delay: 1 }}
-            className="text-3xl font-bold md:text-6xl xl:text-7xl"
+            className="text-3xl font-bold md:text-6xl xl:text-7xl bg-gradient-to-b from-[#fff] to-[#adadad] bg-clip-text !leading-normal text-transparent"
           >
             Kurtd Daniel Bigtas.
           </motion.h1>
@@ -27,7 +27,7 @@ const HeroSection = () => {
             whileInView={{ y: "0%", opacity: 1 }}
             initial={{ y: "45%", opacity: 0 }}
             transition={{ duration: 0.3, delay: 1.2 }}
-            className="text-3xl font-bold text-custom-secondary bg-gradient-to-t from-[#007bff] to-[#007bff] bg-clip-text text-transparent leading-[1.2] md:text-6xl xl:text-7xl"
+            className="text-3xl font-bold text-custom-secondary bg-gradient-to-t from-[#007bff] to-[#007bff] bg-clip-text text-transparent md:text-6xl xl:text-7xl"
           >
             I turn caffeine into websites.
           </motion.h1>

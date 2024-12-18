@@ -26,36 +26,4 @@ section {
   height: 100vh;
 }
 
-.light::before,
-.light::after {
-  content: "";
-  position: absolute;
-  width: inherit;
-  height: inherit;
-  inset: 0;
-  opacity: 0;
-  border-radius: inherit;
-}
-.light::before {
-  background: #007bff;
-  box-shadow: 0 0 2px 1px #3291ff40;
-  opacity: 1;
-}
-.light::after {
-  background: #fff;
-  opacity: 1;
-  box-shadow: 0 0 2px 2px #007bff, 0 0 2px 1px #3291ff40;
-}
-
-@media screen and (min-width: 1920px) {
-  .light::before {
-    background: #007bff;
-    box-shadow: 0 0 2px 1px #3291ff40;
-    opacity: 1;
-  }
-  .light::after {
-    background: #fff;
-    opacity: 1;
-    box-shadow: 0 0 3px 3px #007bff, 0 0 2px 1px #3291ff40;
-  }
-}
+/* bg-gradient-to-b from-[#27272741_0.6%] to-[#171717] shadow-[inset_0_0_10px_#ffffff1a] */

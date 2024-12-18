@@ -6,7 +6,7 @@ const AboutMeSection = () => {
     <>
       <motion.section
         id="about"
-        className="relative flex items-center mx-auto max-w-[80rem] flex-col w-full justify-start pt-40 md:px-16 md:pt-0 px-8"
+        className="relative flex items-center mx-auto max-w-[80rem] flex-col w-full justify-start mt-40 md:px-16 md:pt-0 px-8"
       >
         <div className="w-full flex flex-col min-h-screen justify-center gap-2 max-w-[80rem] xl:gap-6 ">
           <motion.div
@@ -14,7 +14,7 @@ const AboutMeSection = () => {
             whileInView={{ opacity: 1 }}
             initial={{ opacity: 0 }}
             transition={{ duration: 0.3, delay: 0.5 }}
-            className="flex flex-col w-full gap-8 p-6 rounded-md bg-gradient-to-b from-[#27272741_0.6%] to-[#171717] shadow-[inset_0_0_10px_#ffffff1a]"
+            className="flex flex-col w-full gap-8 rounded-md"
           >
             <motion.div
               viewport={{ once: true }}
@@ -33,7 +33,7 @@ const AboutMeSection = () => {
                   ( ENFJ-A )
                 </a>
               </h1>
-              <div className="hidden flex-1 bg-white/50 h-[1px] md:flex ml-4"></div>
+              <motion.div className="hidden flex-1 bg-white/50 h-[1px] md:flex ml-4"></motion.div>
             </motion.div>
             <div className="w-full flex flex-col-reverse justify-start align-center relative gap-4 lg:items-center xl:gap-8">
               <div className="w-full">
