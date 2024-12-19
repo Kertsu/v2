@@ -3,7 +3,7 @@ import Lights from "./lights";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
-const code = `import Person from "../types";
+const code = `import { Person } from "../types";
 
 const ME: Person = {
   name: "Kurtd Daniel Bigtas",
@@ -51,52 +51,46 @@ const AboutMeSection = () => {
               <motion.div className="hidden flex-1 bg-white/50 h-[1px] md:flex ml-4"></motion.div>
             </motion.div>
             <div className="w-full flex flex-col-reverse justify-start align-center relative gap-4 lg:items-center xl:gap-8">
-              <div className="w-full flex flex-col gap-4 md:flex-row">
-                <div className="w-full rounded-lg bg-gradient-to-b from-[#27272741_0.6%] to-[#171717] p-4 md:w-1/2">
-                  <motion.p
-                    viewport={{ once: true }}
-                    whileInView={{ y: "0%", opacity: 1 }}
-                    initial={{ y: "-35%", opacity: 0 }}
-                    transition={{ duration: 0.3, delay: 0.8 }}
-                    className="text-sm text-custom-secondary md:text-base"
-                  >
+              <div className="w-full flex flex-col gap-4 lg:flex-row">
+                <motion.div
+                  viewport={{ once: true }}
+                  whileInView={{ y: "0%", opacity: 1 }}
+                  initial={{ y: "-35%", opacity: 0 }}
+                  transition={{ duration: 0.5, delay: 0.8 }}
+                  className="w-full rounded-lg bg-gradient-to-b from-[#27272741_0.6%] to-[#171717] p-4 lg:w-1/2"
+                >
+                  <p className="text-sm text-custom-secondary md:text-base">
                     Hello! My name is Kurtd Daniel Bigtas. My interest in web
                     development started back in my second year of college
                     (2022), and it has grown significantly since then.
-                  </motion.p>
+                  </p>
                   <br />
-                  <motion.p
-                    viewport={{ once: true }}
-                    whileInView={{ y: "0%", opacity: 1 }}
-                    initial={{ y: "-35%", opacity: 0 }}
-                    transition={{ duration: 0.3, delay: 0.9 }}
-                    className="text-sm text-custom-secondary md:text-base"
-                  >
+                  <p className="text-sm text-custom-secondary md:text-base">
                     Overtime, I realized that bringing ideas to life is
                     satisfying, driving me to learn more and pursue my passion.
                     Little did I know, this would become one of the most
                     exciting and rewarding decisions of my life.
-                  </motion.p>
+                  </p>
                   <br />
-                  <motion.p
-                    viewport={{ once: true }}
-                    whileInView={{ y: "0%", opacity: 1 }}
-                    initial={{ y: "-35%", opacity: 0 }}
-                    transition={{ duration: 0.3, delay: 1 }}
-                    className="text-sm text-custom-secondary md:text-base"
-                  >
+                  <p className="text-sm text-custom-secondary md:text-base">
                     Fast-forward to today, I am on my journey to master the art
                     of web development while exploring various technologies to
                     stay current and competitive in the industry.
-                  </motion.p>
-                </div>
-                <div className="w-full rounded-lg md:w-1/2">
+                  </p>
+                </motion.div>
+                <motion.div
+                  viewport={{ once: true }}
+                  whileInView={{ y: "0%", opacity: 1 }}
+                  initial={{ y: "-35%", opacity: 0 }}
+                  transition={{ duration: 0.5, delay: 0.8 }}
+                  className="w-full rounded-lg lg:w-1/2"
+                >
                   <SyntaxHighlighter
                     customStyle={{
                       background:
                         "linear-gradient(to bottom, #27272741 0.6%, #171717)",
                     }}
-                    className="h-full rounded-lg m-0 flex items-center max-h-[320px]"
+                    className="h-full rounded-lg m-0 flex items-center xl:max-h-[320px]"
                     language="javascript"
                     style={vscDarkPlus}
                     showLineNumbers={true}
@@ -107,7 +101,7 @@ const AboutMeSection = () => {
                   >
                     {code}
                   </SyntaxHighlighter>
-                </div>
+                </motion.div>
               </div>
               {/* <motion.img
                 viewport={{ once: true }}

@@ -80,8 +80,15 @@ const TechnologiesSection = () => {
   return (
     <motion.section
       id="technologies"
-      className="relative flex items-center max-w-[80rem] mx-auto flex-col w-full justify-start mt-40 gap-8 bg-center px-8 md:px-16"
+      className="relative flex items-center max-w-[80rem] mx-auto flex-col w-full justify-start mt-40 gap-8 bg-top px-0 md:px-16"
     >
+      <motion.div
+        initial={{ opacity: 0}}
+        whileInView={{ opacity: 1}}
+        viewport={{ once: true }}
+        transition={{ duration: 0.2, delay: 1.2 }}
+        className="w-full h-full absolute top-0 left-0 bg-[linear-gradient(to_right,#484848,transparent_1px),linear-gradient(to_bottom,#484848,transparent_1px)] bg-[size:6rem_6rem] [mask-composite:intersect] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_90%,#000_80%,transparent_125%),_radial-gradient(ellipse_50%_50%_at_50%_20%,#000_80%,transparent_125%)] lg:[mask-image:radial-gradient(ellipse_50%_50%_at_50%_90%,#000_80%,transparent_125%),_radial-gradient(ellipse_50%_50%_at_50%_40%,#000_80%,transparent_125%)] xl:[mask-image:radial-gradient(ellipse_50%_50%_at_50%_90%,#000_80%,transparent_125%),_radial-gradient(ellipse_50%_50%_at_50%_20%,#000_80%,transparent_125%)]"
+      ></motion.div>
       <motion.div
         viewport={{ once: true }}
         whileInView={{ opacity: 1 }}
@@ -178,7 +185,6 @@ const TechnologiesSection = () => {
             <motion.div
               initial={{ left: "45%", opacity: 0 }}
               animate={{ left: "50%", opacity: 1 }}
-             
               className="absolute top-[calc(50%_+_2rem)] left-1/2 -translate-x-1/2 p-4 flex flex-col items-center justify-center gap-3 opacity-50 xl:top-1/2"
             >
               <currentTech.icon className="text-[12rem] text-white/80"></currentTech.icon>

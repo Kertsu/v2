@@ -3,7 +3,6 @@ import Main from "./layouts/main";
 import Header from "./components/header";
 import HeroSection from "./components/hero-section";
 import AboutMeSection from "./components/about-me-section";
-import { HeroSvg } from "./components/svg";
 import FeaturedSection from "./components/featured-section";
 import TechnologiesSection from "./components/technologies-section";
 const App = () => {
@@ -11,7 +10,6 @@ const App = () => {
     <ThemeProvider>
       <Main>
         <div className="fixed h-[300%] w-[300%] bg-[url('grain.webp')] opacity-[0.025] animate-grain pointer-events-none top-0"></div>
-        <HeroSvg />
         <Header />
         <HeroSection />
         <AboutMeSection />

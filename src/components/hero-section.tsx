@@ -1,14 +1,16 @@
 import { motion } from "framer-motion";
+import { HeroSvg } from "./svg";
 const HeroSection = () => {
   return (
     <>
       <motion.section className="relative flex items-center max-w-[80rem] px-8 mx-auto flex-col w-full justify-start md:px-16">
+        <HeroSvg />
         <div className="w-full flex flex-col min-h-screen justify-center gap-2 xl:gap-3">
           <motion.h3
             viewport={{ once: true }}
             whileInView={{ y: "0%", opacity: 1 }}
             initial={{ y: "45%", opacity: 0 }}
-            transition={{ duration: 0.3, delay: .8 }}
+            transition={{ duration: 0.3, delay: 0.8 }}
             className="text-base tracking-widest font-semibold md:text-lg"
           >
             Hi there! I am

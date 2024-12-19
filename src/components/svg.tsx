@@ -7,7 +7,7 @@ export const HeroSvg = () => {
       whileInView={{ opacity: 1 }}
       initial={{ opacity: 0 }}
       transition={{ duration: 0.3, delay: .8 }}
-      className="w-full h-screen bg-center fixed right-0 top-0 bottom-0 bg-cover justify-center align-center -z-10 flex "
+      className="w-full h-screen bg-center absolute right-0 top-0 bottom-0 bg-cover justify-center align-center -z-10 flex "
     >
       <img
         className="w-full h-full"
