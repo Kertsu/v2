@@ -10,6 +10,7 @@ const App = () => {
   return (
     <ThemeProvider>
       <Main>
+        <div className="fixed h-[300%] w-[300%] bg-[url('grain.webp')] opacity-[0.025] animate-grain pointer-events-none top-0"></div>
         <HeroSvg />
         <Header />
         <HeroSection />

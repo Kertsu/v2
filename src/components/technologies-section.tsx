@@ -24,6 +24,7 @@ import {
   SiTypescript,
   SiVercel,
   SiLaravel,
+  SiTypeorm,
 } from "react-icons/si";
 import { useState } from "react";
 
@@ -54,6 +55,7 @@ const technologies: Technology[] = [
   // Database Technologies
   { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
   { name: "MySQL", icon: SiMysql, color: "#4479A1" },
+  { name: "TypeORM", icon: SiTypeorm, color: "#FE0902" },
 
   // DevOps/Cloud Platforms
   { name: "Vercel", icon: SiVercel, color: "#000000" },
