@@ -26,7 +26,7 @@ export const projects: Project[] = [
       visibility: "private",
       url: "https://github.com/Kertsu/kurtddanielbigtas",
     },
-    appThumbnailUrl: "",
+    appThumbnailUrl: "v2.webp",
     technologies: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
   },
   {
@@ -37,7 +37,7 @@ export const projects: Project[] = [
       visibility: "public",
       url: "https://github.com/Kertsu/LV-ConnectED",
     },
-    appThumbnailUrl: "",
+    appThumbnailUrl: "connected.webp",
     technologies: [
       "React",
       "TypeScript",
@@ -57,28 +57,28 @@ export const projects: Project[] = [
       visibility: "private",
       url: "https://github.com/Kertsu/Whisper",
     },
-    appThumbnailUrl: "",
-    technologies: [],
+    appThumbnailUrl: "whisper.svg",
+    technologies: ["Angular", "PWA", "PrimeNG", "Node.js", "Express.js", "Socket.IO", "MongoDB"],
   },
   {
     title: "Xplain",
-    description: "",
+    description: "A web application that allows users to transcribe YouTube videos and generate summaries.",
     githubRepository: {
       visibility: "private",
-      url: "",
+      url: "https://github.com/Kertsu/Xplain",
     },
-    appThumbnailUrl: "",
-    technologies: [],
+    appThumbnailUrl: "xplain.svg",
+    technologies: ["Angular", "PrimeNG", "Node.js", "Express.js", "OpenAI API"],
   },
   {
     title: "DeskSync v2",
-    description: "",
+    description: "DeskSync is an online-based hot desk booking tool that assists groups, businesses, and organizations in developing settings that are both safer and more productive.",
     githubRepository: {
       visibility: "private",
-      url: "",
+      url: "https://github.com/Kertsu/DeskSyncV2",
     },
-    appThumbnailUrl: "",
-    technologies: [],
+    appThumbnailUrl: "desksyncv2.svg",
+    technologies: ["Angular", "PrimeNG", "Node.js", "Express.js", "Socket.IO", "MongoDB"],
   },
   // {
   //   title: "AIM Voting System",
@@ -92,13 +92,13 @@ export const projects: Project[] = [
   // },
   {
     title: "Personal Website v1",
-    description: "",
+    description: "The first iteration of my personal website.",
     githubRepository: {
       visibility: "public",
-      url: "",
+      url: "https://github.com/Kertsu/kurtddanielbigtas-v1",
     },
-    appThumbnailUrl: "",
-    technologies: [],
+    appThumbnailUrl: "v1.webp",
+    technologies: ["Angular", "CSS"],
   },
 ];
 

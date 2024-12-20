@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { HeroSvg } from "./svg";
 import { handleScroll } from "../lib/ui-service";
-import { RiArrowRightDoubleLine } from "react-icons/ri";
+import { FaLocationArrow } from "react-icons/fa";
 
 const HeroSection = () => {
   return (
@@ -56,7 +56,7 @@ const HeroSection = () => {
             initial={{ y: "45%", opacity: 0 }}
             transition={{ duration: 0.3, delay: 1.4 }}
           >
-            <a onClick={(e) => handleScroll(e, "about")}>View my work <RiArrowRightDoubleLine className="inline group-hover:translate-x-1 transition-all" /></a>
+            <a onClick={(e) => handleScroll(e, "about")}>View my work <FaLocationArrow className="inline text-xs ml-1" /></a>
           </motion.button>
         </div>
       </motion.section>

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { projects, Project as ProjectType } from "../constants";
+// import { projects, Project as ProjectType } from "../constants";
 
 const FeaturedSection = () => {
   return (
