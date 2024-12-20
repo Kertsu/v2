@@ -36,19 +36,20 @@ const AboutMeSection = () => {
               whileInView={{ y: "0%", opacity: 1 }}
               initial={{ y: "-35%", opacity: 0 }}
               transition={{ duration: 0.3, delay: 0.6 }}
-              className="w-full flex justify-start items-center"
+              className="w-full flex justify-center items-center"
             >
-              <h1 className="text-2xl font-semibold md:text-3xl">
-                About Me{" "}
-                <a
+              <h1 className="text-2xl font-bold md:text-5xl xl:text-6xl bg-gradient-to-b from-[#fff] to-[#adadad] !bg-clip-text !leading-normal !text-transparent">
+                About Me
+              </h1>
+              {/* <a
                   href="https://www.16personalities.com/profiles/enfj-a/m/hqgud0imi"
                   target="_blank"
                   className="bg-gradient-to-t from-[#007bff] to-[#007bff] bg-clip-text text-transparent"
                 >
                   ( ENFJ-A )
-                </a>
-              </h1>
-              <motion.div className="hidden flex-1 bg-white/50 h-[1px] md:flex ml-4"></motion.div>
+                </a> */}
+
+              {/* <motion.div className="hidden flex-1 bg-white/50 h-[1px] md:flex ml-4"></motion.div> */}
             </motion.div>
             <div className="w-full flex flex-col-reverse justify-start align-center relative gap-4 lg:items-center xl:gap-8">
               <div className="w-full flex flex-col gap-4 lg:flex-row">
@@ -60,9 +61,13 @@ const AboutMeSection = () => {
                   className="w-full rounded-lg bg-gradient-to-b from-[#27272741_0.6%] to-[#171717] p-4 lg:w-1/2"
                 >
                   <p className="text-sm text-custom-secondary md:text-base">
-                    Hello! My name is Kurtd Daniel Bigtas. My interest in web
-                    development started back in my second year of college
-                    (2022), and it has grown significantly since then.
+                    Hello! My name is{" "}
+                    <span className="text-custom-primary">
+                      Kurtd Daniel Bigtas
+                    </span>
+                    . My interest in web development started back in my second
+                    year of college (2022), and it has grown significantly since
+                    then.
                   </p>
                   <br />
                   <p className="text-sm text-custom-secondary md:text-base">
@@ -90,7 +95,7 @@ const AboutMeSection = () => {
                       background:
                         "linear-gradient(to bottom, #27272741 0.6%, #171717)",
                     }}
-                    className="h-full rounded-lg m-0 flex items-center xl:max-h-[320px]"
+                    className="h-full rounded-lg !m-0 flex items-center xl:max-h-[320px]"
                     language="javascript"
                     style={vscDarkPlus}
                     showLineNumbers={true}

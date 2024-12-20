@@ -1,74 +1,7 @@
 import { motion } from "framer-motion";
 import "../styles/technologies.css";
-import {
-  SiAngular,
-  SiCss3,
-  SiElectron,
-  SiExpress,
-  SiGit,
-  SiGithub,
-  SiHtml5,
-  SiJavascript,
-  SiMongodb,
-  SiMongoose,
-  SiMysql,
-  SiNetlify,
-  SiNodedotjs,
-  SiPostman,
-  SiPrimeng,
-  SiPrisma,
-  SiReact,
-  SiRender,
-  SiShadcnui,
-  SiTailwindcss,
-  SiTypescript,
-  SiVercel,
-  SiLaravel,
-  SiTypeorm,
-} from "react-icons/si";
 import { useState } from "react";
-
-interface Technology {
-  name: string;
-  icon: React.FC<React.SVGProps<SVGSVGElement>>;
-  color: string;
-}
-
-const technologies: Technology[] = [
-  // Frontend Technologies
-  { name: "HTML", icon: SiHtml5, color: "#E34F26" },
-  { name: "CSS", icon: SiCss3, color: "#1572B6" },
-  { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
-  { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
-  { name: "Angular", icon: SiAngular, color: "#DD1B16" },
-  { name: "React", icon: SiReact, color: "#61DAFB" },
-  { name: "Electron", icon: SiElectron, color: "#47848F" },
-  { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
-
-  // Backend Technologies
-  { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
-  { name: "Express.js", icon: SiExpress, color: "#000000" },
-  { name: "Mongoose", icon: SiMongoose, color: "#880000" },
-  { name: "Prisma", icon: SiPrisma, color: "#2D3748" },
-  { name: "Laravel", icon: SiLaravel, color: "#DD1B16" },
-
-  // Database Technologies
-  { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
-  { name: "MySQL", icon: SiMysql, color: "#4479A1" },
-  { name: "TypeORM", icon: SiTypeorm, color: "#FE0902" },
-
-  // DevOps/Cloud Platforms
-  { name: "Vercel", icon: SiVercel, color: "#000000" },
-  { name: "Netlify", icon: SiNetlify, color: "#00C7B7" },
-  { name: "Render", icon: SiRender, color: "#121212" },
-  { name: "GitHub", icon: SiGithub, color: "#181717" },
-
-  // API & Tools
-  { name: "Postman", icon: SiPostman, color: "#FF6C37" },
-  { name: "Shadcn", icon: SiShadcnui, color: "#000000" },
-  { name: "Git", icon: SiGit, color: "#F05032" },
-  { name: "PrimeNG", icon: SiPrimeng, color: "#DD1B16" },
-];
+import { technologies, Technology } from "../constants";
 
 const TechnologiesSection = () => {
   const [currentTech, setCurrentTech] = useState<Technology | null>();
@@ -80,14 +13,17 @@ const TechnologiesSection = () => {
   return (
     <motion.section
       id="technologies"
-      className="relative flex items-center max-w-[80rem] mx-auto flex-col w-full justify-start mt-40 gap-8 bg-top px-0 md:px-16"
+      className="relative flex items-center max-w-[80rem] mx-auto flex-col w-full justify-center mt-80 gap-8 bg-top px-0 md:px-16"
     >
       <motion.div
         initial={{ opacity: 0}}
         whileInView={{ opacity: 1}}
         viewport={{ once: true }}
         transition={{ duration: 0.2, delay: 1.2 }}
-        className="w-full h-full absolute top-0 left-0 bg-[linear-gradient(to_right,#484848,transparent_1px),linear-gradient(to_bottom,#484848,transparent_1px)] bg-[size:6rem_6rem] [mask-composite:intersect] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_90%,#000_80%,transparent_125%),_radial-gradient(ellipse_50%_50%_at_50%_20%,#000_80%,transparent_125%)] lg:[mask-image:radial-gradient(ellipse_50%_50%_at_50%_90%,#000_80%,transparent_125%),_radial-gradient(ellipse_50%_50%_at_50%_40%,#000_80%,transparent_125%)] xl:[mask-image:radial-gradient(ellipse_50%_50%_at_50%_90%,#000_80%,transparent_125%),_radial-gradient(ellipse_50%_50%_at_50%_20%,#000_80%,transparent_125%)]"
+        style={{
+          backgroundImage: currentTech ? `linear-gradient(to right,${currentTech.color},transparent 1px),linear-gradient(to bottom,${currentTech.color},transparent 1px)` : "linear-gradient(to right,#484848,transparent 1px),linear-gradient(to bottom,#484848,transparent 1px)",
+        }}
+        className="w-full h-full absolute top-0 left-0  bg-[size:6rem_6rem] [mask-composite:intersect] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_90%,#000_80%,transparent_125%),_radial-gradient(ellipse_50%_50%_at_50%_20%,#000_80%,transparent_125%)] lg:[mask-image:radial-gradient(ellipse_50%_50%_at_50%_90%,#000_80%,transparent_125%),_radial-gradient(ellipse_50%_50%_at_50%_40%,#000_80%,transparent_125%)] xl:[mask-image:radial-gradient(ellipse_50%_50%_at_50%_100%,#000_80%,transparent_125%),_radial-gradient(ellipse_60%_60%_at_50%_35%,#000_80%,transparent_125%)]"
       ></motion.div>
       <motion.div
         viewport={{ once: true }}
@@ -139,11 +75,14 @@ const TechnologiesSection = () => {
         ></motion.div>
       </motion.div>
       <motion.div
-        className="w-3/4 text-center"
+        className="w-3/4 text-center bg-gradient-to-b from-[#27272741_0.6%] to-[#171717] p-8 rounded-lg "
         initial={{ opacity: 0, y: "-20%" }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.1, delay: 1.2 }}
+        // style={{
+        //   boxShadow: currentTech ? `inset 0 0 20px ${currentTech.color}` : ""
+        // }}
       >
         <p className="text-custom-secondary">
           I've been doing web development for about 2 years now. Progress is

@@ -1,7 +1,8 @@
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { SiFacebook, SiGithub, SiInstagram } from "react-icons/si";
 import { motion } from "framer-motion";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { handleScroll } from "../lib/ui-service";
 
 interface NavLink {
   targetId: string
@@ -38,14 +39,7 @@ const socmedLinks = [
 ];
 
 const Header = () => {
-  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
-    e.preventDefault();
-    const targetElement = document.getElementById(targetId);
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: "smooth" });
-      history.pushState(null, '', `#${targetId}`)
-    }
-  };
+  
 
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
