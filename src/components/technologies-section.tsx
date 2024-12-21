@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import "../styles/technologies.css";
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import { technologies, Technology } from "../constants";
 
-const TechnologiesSection = () => {
+const TechnologiesSection = ({ children }: { children?: ReactNode }) => {
   const [currentTech, setCurrentTech] = useState<Technology | null>();
 
   const handleHoveredTech = (tech: Technology) => {
@@ -15,7 +15,7 @@ const TechnologiesSection = () => {
       id="technologies"
       className="relative flex items-center max-w-[80rem] mx-auto flex-col w-full justify-center mt-80 gap-8 bg-top px-0 md:px-16"
     >
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0}}
         whileInView={{ opacity: 1}}
         viewport={{ once: true }}
@@ -23,8 +23,8 @@ const TechnologiesSection = () => {
         style={{
           backgroundImage: currentTech ? `linear-gradient(to right,${currentTech.color},transparent 1px),linear-gradient(to bottom,${currentTech.color},transparent 1px)` : "linear-gradient(to right,#484848,transparent 1px),linear-gradient(to bottom,#484848,transparent 1px)",
         }}
-        className="w-full h-full absolute top-0 left-0  bg-[size:6rem_6rem] [mask-composite:intersect] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_90%,#000_80%,transparent_125%),_radial-gradient(ellipse_50%_50%_at_50%_20%,#000_80%,transparent_125%)] lg:[mask-image:radial-gradient(ellipse_50%_50%_at_50%_90%,#000_80%,transparent_125%),_radial-gradient(ellipse_50%_50%_at_50%_40%,#000_80%,transparent_125%)] xl:[mask-image:radial-gradient(ellipse_50%_50%_at_50%_100%,#000_80%,transparent_125%),_radial-gradient(ellipse_60%_60%_at_50%_35%,#000_80%,transparent_125%)]"
-      ></motion.div>
+        className="w-full h-full absolute top-0 left-0  bg-[size:8rem_8rem] [mask-composite:intersect] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_90%,#000_80%,transparent_125%),_radial-gradient(ellipse_50%_50%_at_50%_20%,#000_80%,transparent_125%)] lg:[mask-image:radial-gradient(ellipse_50%_50%_at_50%_90%,#000_80%,transparent_125%),_radial-gradient(ellipse_50%_50%_at_50%_40%,#000_80%,transparent_125%)] xl:[mask-image:radial-gradient(ellipse_50%_50%_at_50%_100%,#000_80%,transparent_125%),_radial-gradient(ellipse_60%_60%_at_50%_35%,#000_80%,transparent_125%)]"
+      ></motion.div> */}
       <motion.div
         viewport={{ once: true }}
         whileInView={{ opacity: 1 }}
@@ -74,6 +74,9 @@ const TechnologiesSection = () => {
           className="vertical-lines right-8 origin-top"
         ></motion.div>
       </motion.div>
+
+      {children}
+
       <motion.div
         className="w-3/4 text-center bg-gradient-to-b from-[#27272741_0.6%] to-[#171717] p-8 rounded-lg "
         initial={{ opacity: 0, y: "-20%" }}
@@ -92,7 +95,7 @@ const TechnologiesSection = () => {
       </motion.div>
 
       <motion.div
-        className="w-full relative"
+        className="w-[90%] relative md:w-full"
         onMouseLeave={() => setCurrentTech(null)}
       >
         <div className="absolute bottom-0 left-0 right-0 top-0 "></div>
