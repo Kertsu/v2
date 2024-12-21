@@ -32,16 +32,22 @@ const FeaturedProject = ({ project }: { project: ProjectType }) => {
     narration,
   } = project;
   return (
-    <motion.img
-      width={500}
-      initial={{ filter: "blur(5px)" }}
-      whileInView={{ filter: "blur(0px)" }}
-      transition={{ duration: 0.5, delay: 0.2 }}
-      viewport={{ once: true }}
-      src={appThumbnailUrl}
-      alt={title}
-      className="rounded-2xl shadow-lg"
-    />
+    <div className="w-full p-4 flex flex-col items-center gap-4 justify-start border rounded-lg md:flex-row">
+      <motion.img
+        width={500}
+        initial={{ filter: "blur(5px)" }}
+        whileInView={{ filter: "blur(0px)" }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        viewport={{ once: true }}
+        src={appThumbnailUrl}
+        alt={title}
+        className="rounded-md shadow-lg md:w-1/2"
+      />
+      <div className="w-full flex flex-col gap-2">
+        <h1>{title}</h1>
+        <p>{description}</p>
+      </div>
+    </div>
   );
 };
 

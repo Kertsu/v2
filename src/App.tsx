@@ -6,7 +6,7 @@ import AboutMeSection from "./components/about-me-section";
 import FeaturedSection from "./components/featured-section";
 import TechnologiesSection from "./components/technologies-section";
 import ContactSection from "./components/contact-section";
-import Footer from "./components/footer";
+// import Footer from "./components/footer";
 const App = () => {
   return (
     <ThemeProvider>
@@ -19,7 +19,7 @@ const App = () => {
         <FeaturedSection />
         <ContactSection />
       </Main>
-      <Footer />
+      {/* <Footer /> */}
     </ThemeProvider>
   );
 };

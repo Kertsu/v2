@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import "../styles/technologies.css";
 import { ReactNode, useState } from "react";
 import { technologies, Technology } from "../constants";
+import { StackBeam } from "./stack-beam";
+import { BorderBeam } from "./ui/border-beam";
 
 const TechnologiesSection = ({ children }: { children?: ReactNode }) => {
   const [currentTech, setCurrentTech] = useState<Technology | null>();
@@ -13,8 +15,26 @@ const TechnologiesSection = ({ children }: { children?: ReactNode }) => {
   return (
     <motion.section
       id="technologies"
-      className="relative flex items-center max-w-[80rem] mx-auto flex-col w-full justify-center mt-80 gap-8 bg-top px-0 md:px-16"
+      className="relative flex items-center max-w-[80rem] mx-auto flex-col w-full justify-center mt-[25rem] gap-8 bg-top px-0 md:px-16 lg:mt-60"
     >
+      {/* <GridPattern
+        squares={[
+          [4, 4],
+          [5, 1],
+          [8, 2],
+          [5, 3],
+          [5, 5],
+          [10, 10],
+          [12, 15],
+          [15, 10],
+          [10, 15],
+          [15, 10],
+          [10, 15],
+          [15, 10],
+        ]}
+        className="[mask-image:radial-gradient(400px_circle_at_center,white,transparent)] inset-x-0 inset-y-[-30%] h-[200%] skew-y-12"
+      /> */}
+
       {/* <motion.div
         initial={{ opacity: 0}}
         whileInView={{ opacity: 1}}
@@ -77,8 +97,10 @@ const TechnologiesSection = ({ children }: { children?: ReactNode }) => {
 
       {children}
 
+      <StackBeam />
+
       <motion.div
-        className="w-3/4 text-center bg-gradient-to-b from-[#27272741_0.6%] to-[#171717] p-8 rounded-lg "
+        className="w-3/4 text-center bg-gradient-to-b from-[#27272741_0.6%] to-[#171717] p-8 rounded-lg relative"
         initial={{ opacity: 0, y: "-20%" }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -87,6 +109,7 @@ const TechnologiesSection = ({ children }: { children?: ReactNode }) => {
         //   boxShadow: currentTech ? `inset 0 0 20px ${currentTech.color}` : ""
         // }}
       >
+        <BorderBeam size={100} duration={12} delay={9} />
         <p className="text-custom-secondary">
           I've been doing web development for about 2 years now. Progress is
           progress, no matter how small, and every step I take contributes to my
@@ -109,7 +132,7 @@ const TechnologiesSection = ({ children }: { children?: ReactNode }) => {
                 transition={{ duration: 0.1, delay: 1.2 + index * 0.04 }}
                 key={index}
                 onMouseEnter={() => handleHoveredTech(tech)}
-                className="bg-gradient-to-b from-[#27272741_0.6%] to-[#171717] hover:shadow-[inset_0_0_10px_#ffffff1a] hover:bg-white/20 hover:border-white/20 rounded-xl p-4 flex flex-col justify-center items-center gap-2 border border-[#484848]/40 z-10 transition-colors duration-200"
+                className="relative bg-gradient-to-b from-[#27272741_0.6%] to-[#171717] hover:shadow-[inset_0_0_10px_#ffffff1a] hover:bg-white/20 hover:border-white/20 rounded-xl p-4 flex flex-col justify-center items-center gap-2 border border-[#484848]/40 z-10 transition-colors duration-200"
               >
                 <tech.icon
                   className="text-white/80 size-[35px] transition-colors duration-200"
