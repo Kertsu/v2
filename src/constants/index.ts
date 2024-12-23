@@ -1,4 +1,4 @@
-import { SiHtml5, SiCss3, SiJavascript, SiTypescript, SiAngular, SiReact, SiElectron, SiTailwindcss, SiNodedotjs, SiExpress, SiMongoose, SiPrisma, SiLaravel, SiMongodb, SiMysql, SiTypeorm, SiVercel, SiNetlify, SiRender, SiGithub, SiPostman, SiShadcnui, SiGit, SiPrimeng } from "react-icons/si";
+import { SiHtml5, SiCss3, SiJavascript, SiTypescript, SiAngular, SiReact, SiElectron, SiTailwindcss, SiNodedotjs, SiExpress, SiMongoose, SiPrisma, SiLaravel, SiMongodb, SiMysql, SiTypeorm, SiVercel, SiNetlify, SiRender, SiGithub, SiPostman, SiShadcnui, SiGit, SiPrimeng, SiFramer } from "react-icons/si";
 
 export interface Project {
   title: string;
@@ -136,6 +136,7 @@ export const technologies: Technology[] = [
   { name: "Shadcn", icon: SiShadcnui, color: "#000000" },
   { name: "Git", icon: SiGit, color: "#F05032" },
   { name: "PrimeNG", icon: SiPrimeng, color: "#DD1B16" },
+  { name: "Framer Motion", icon: SiFramer, color: "#000000" },
 ];
 
 export const iconSlugs = [

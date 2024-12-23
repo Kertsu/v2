@@ -21,7 +21,7 @@ const AboutMeSection = () => {
     <>
       <motion.section
         id="about"
-        className="relative flex items-center mx-auto max-w-[80rem] flex-col w-full justify-start mt-40 md:px-16 md:pt-0 px-8"
+        className="relative flex items-center mx-auto max-w-[80rem] flex-col w-full justify-start md:px-16 md:pt-0 px-8"
       >
         <div className="w-full flex flex-col min-h-screen justify-center gap-2 max-w-[80rem] xl:gap-6 ">
           <motion.div

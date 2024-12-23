@@ -23,7 +23,7 @@ img {
 
 section {
   min-height: 100vh;
-  height: 100vh;
+  height: auto;
 }
 
 /* bg-gradient-to-b from-[#27272741_0.6%] to-[#171717] shadow-[inset_0_0_10px_#ffffff1a] */

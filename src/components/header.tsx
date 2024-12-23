@@ -130,7 +130,7 @@ const Header = () => {
             ))}
           </ul>
 
-          <div className="h-[90px] w-[.5px] border"></div>
+          <div className="h-[90px] w-[.5px] border border-white/20"></div>
         </div>
       </motion.div>
     </>

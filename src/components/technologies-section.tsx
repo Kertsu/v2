@@ -15,7 +15,7 @@ const TechnologiesSection = ({ children }: { children?: ReactNode }) => {
   return (
     <motion.section
       id="technologies"
-      className="relative flex items-center max-w-[80rem] mx-auto flex-col w-full justify-center mt-[25rem] gap-8 bg-top px-0 md:px-16 lg:mt-60"
+      className="relative flex items-center max-w-[80rem] mx-auto flex-col w-full justify-center mt-40 gap-8 bg-top px-0 md:px-16"
     >
       {/* <GridPattern
         squares={[
@@ -109,7 +109,7 @@ const TechnologiesSection = ({ children }: { children?: ReactNode }) => {
         //   boxShadow: currentTech ? `inset 0 0 20px ${currentTech.color}` : ""
         // }}
       >
-        <BorderBeam size={100} duration={12} delay={9} />
+        {/* <BorderBeam size={100} duration={12} delay={9} /> */}
         <p className="text-custom-secondary">
           I've been doing web development for about 2 years now. Progress is
           progress, no matter how small, and every step I take contributes to my

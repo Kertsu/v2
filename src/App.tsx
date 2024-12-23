@@ -1,3 +1,4 @@
+import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "./theme/theme-context";
 import Main from "./layouts/main";
 import Header from "./components/header";
@@ -9,18 +10,19 @@ import ContactSection from "./components/contact-section";
 // import Footer from "./components/footer";
 const App = () => {
   return (
-    <ThemeProvider>
-      <Main>
-        <div className="fixed h-[300%] w-[300%] bg-[url('grain.webp')] opacity-[0.025] animate-grain pointer-events-none top-0"></div>
-        <Header />
-        <HeroSection />
-        <AboutMeSection />
-        <TechnologiesSection />
-        <FeaturedSection />
-        <ContactSection />
-      </Main>
-      {/* <Footer /> */}
-    </ThemeProvider>
+    <BrowserRouter>
+      <ThemeProvider>
+        <Main>
+          <Header />
+          <HeroSection />
+          <AboutMeSection />
+          <TechnologiesSection />
+          <FeaturedSection />
+          <ContactSection />
+        </Main>
+        {/* <Footer /> */}
+      </ThemeProvider>
+    </BrowserRouter>
   );
 };
 

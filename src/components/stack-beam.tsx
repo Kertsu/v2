@@ -40,7 +40,7 @@ export function StackBeam() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.1, delay: 1.2 }}
-      className="relative flex h-[500px] items-center justify-center w-[85%] md:w-full"
+      className="relative flex h-[300px] items-center justify-center w-[80%] md:w-full md:h-[500px]"
       ref={containerRef}
     >
       <div className="flex size-full flex-col max-w-lg items-stretch justify-between gap-10 md:max-h-[200px]">
