@@ -1,4 +1,35 @@
-import { SiHtml5, SiCss3, SiJavascript, SiTypescript, SiAngular, SiReact, SiElectron, SiTailwindcss, SiNodedotjs, SiExpress, SiMongoose, SiPrisma, SiLaravel, SiMongodb, SiMysql, SiTypeorm, SiVercel, SiNetlify, SiRender, SiGithub, SiPostman, SiShadcnui, SiGit, SiPrimeng, SiFramer } from "react-icons/si";
+import { HiQuestionMarkCircle } from "react-icons/hi";
+import {
+  SiHtml5,
+  SiCss3,
+  SiJavascript,
+  SiTypescript,
+  SiAngular,
+  SiReact,
+  SiElectron,
+  SiTailwindcss,
+  SiNodedotjs,
+  SiExpress,
+  SiMongoose,
+  SiPrisma,
+  SiLaravel,
+  SiMongodb,
+  SiMysql,
+  SiTypeorm,
+  SiVercel,
+  SiNetlify,
+  SiRender,
+  SiGithub,
+  SiPostman,
+  SiShadcnui,
+  SiGit,
+  SiPrimeng,
+  SiFramer,
+  SiRadixui,
+  SiPwa,
+  SiSocketdotio,
+  SiOpenai,
+} from "react-icons/si";
 
 export interface Project {
   title: string;
@@ -6,7 +37,7 @@ export interface Project {
   appUrl?: string;
   githubRepository: { visibility: "private" | "public"; url: string };
   appThumbnailUrl: string;
-  technologies: string[];
+  technologies: Technology[];
   contributorAvatarUrls?: string[];
   narration?: string;
 }
@@ -16,6 +47,49 @@ export interface Technology {
   icon: React.FC<React.SVGProps<SVGSVGElement>>;
   color: string;
 }
+
+export const technologies = {
+  // Frontend Technologies
+  html: { name: "HTML", icon: SiHtml5, color: "#E34F26" },
+  css: { name: "CSS", icon: SiCss3, color: "#1572B6" },
+  javascript: { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
+  typescript: { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
+  angular: { name: "Angular", icon: SiAngular, color: "#DD1B16" },
+  react: { name: "React", icon: SiReact, color: "#61DAFB" },
+  electron: { name: "Electron", icon: SiElectron, color: "#47848F" },
+  tailwindcss: { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
+
+  // Backend Technologies
+  nodejs: { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
+  express: { name: "Express.js", icon: SiExpress, color: "#000000" },
+  mongoose: { name: "Mongoose", icon: SiMongoose, color: "#880000" },
+  prisma: { name: "Prisma", icon: SiPrisma, color: "#2D3748" },
+  laravel: { name: "Laravel", icon: SiLaravel, color: "#DD1B16" },
+  socketio: { name: "Socket.io", icon: SiSocketdotio, color: "#000000" },
+
+  // Database Technologies
+  mongodb: { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
+  mysql: { name: "MySQL", icon: SiMysql, color: "#4479A1" },
+  typeorm: { name: "TypeORM", icon: SiTypeorm, color: "#FE0902" },
+
+  // DevOps/Cloud Platforms
+  vercel: { name: "Vercel", icon: SiVercel, color: "#000000" },
+  netlify: { name: "Netlify", icon: SiNetlify, color: "#00C7B7" },
+  render: { name: "Render", icon: SiRender, color: "#121212" },
+  github: { name: "GitHub", icon: SiGithub, color: "#181717" },
+
+  // API & Tools
+  postman: { name: "Postman", icon: SiPostman, color: "#FF6C37" },
+  shadcnui: { name: "Shadcn UI", icon: SiShadcnui, color: "#000000" },
+  radixui: { name: "Radix UI", icon: SiRadixui, color: "#000000" },
+  git: { name: "Git", icon: SiGit, color: "#F05032" },
+  primeng: { name: "PrimeNG", icon: SiPrimeng, color: "#DD1B16" },
+  framer: { name: "Framer Motion", icon: SiFramer, color: "#000000" },
+
+  pwa: { name: "PWA", icon: SiPwa, color: "#000000" },
+  openai: { name: "OpenAI API", icon: SiOpenai, color: "#000000" },
+  azle: { name: "Azle", icon: HiQuestionMarkCircle, color: "#000000" },
+};
 
 export const projects: Project[] = [
   {
@@ -27,7 +101,12 @@ export const projects: Project[] = [
       url: "https://github.com/Kertsu/kurtddanielbigtas",
     },
     appThumbnailUrl: "v2.webp",
-    technologies: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    technologies: [
+      technologies.react,
+      technologies.typescript,
+      technologies.tailwindcss,
+      technologies.framer,
+    ],
   },
   {
     title: "ConnectED",
@@ -39,14 +118,13 @@ export const projects: Project[] = [
     },
     appThumbnailUrl: "connected.webp",
     technologies: [
-      "React",
-      "TypeScript",
-      "Azle",
-      "Tailwind CSS",
-      "Express.js",
-      "TypeORM",
-      "Shadcn UI",
-      "Radix UI",
+      technologies.react,
+      technologies.typescript,
+      technologies.tailwindcss,
+      technologies.express,
+      technologies.typeorm,
+      technologies.shadcnui,
+      technologies.radixui,
     ],
   },
   {
@@ -58,38 +136,51 @@ export const projects: Project[] = [
       url: "https://github.com/Kertsu/Whisper",
     },
     appThumbnailUrl: "whisper.svg",
-    technologies: ["Angular", "PWA", "PrimeNG", "Node.js", "Express.js", "Socket.IO", "MongoDB"],
+    technologies: [
+      technologies.angular,
+      technologies.pwa,
+      technologies.primeng,
+      technologies.nodejs,
+      technologies.express,
+      technologies.socketio,
+      technologies.mongodb,
+    ],
   },
   {
     title: "Xplain",
-    description: "A web application that allows users to transcribe YouTube videos and generate summaries.",
+    description:
+      "A web application that allows users to transcribe YouTube videos and generate summaries.",
     githubRepository: {
       visibility: "private",
       url: "https://github.com/Kertsu/Xplain",
     },
     appThumbnailUrl: "xplain.svg",
-    technologies: ["Angular", "PrimeNG", "Node.js", "Express.js", "OpenAI API"],
+    technologies: [
+      technologies.angular,
+      technologies.primeng,
+      technologies.nodejs,
+      technologies.express,
+      technologies.openai,
+    ],
   },
   {
     title: "DeskSync v2",
-    description: "DeskSync is an online-based hot desk booking tool that assists groups, businesses, and organizations in developing settings that are both safer and more productive.",
+    description:
+      "DeskSync is an online-based hot desk booking tool that assists groups, businesses, and organizations in developing settings that are both safer and more productive.",
     githubRepository: {
       visibility: "private",
       url: "https://github.com/Kertsu/DeskSyncV2",
     },
     appThumbnailUrl: "desksyncv2.svg",
-    technologies: ["Angular", "PrimeNG", "Node.js", "Express.js", "Socket.IO", "MongoDB"],
+    technologies: [
+      technologies.angular,
+      technologies.primeng,
+      technologies.nodejs,
+      technologies.express,
+      technologies.socketio,
+      technologies.mongodb,
+    ],
   },
-  // {
-  //   title: "AIM Voting System",
-  //   description: "",
-  //   githubRepository: {
-  //     visibility: "private",
-  //     url: "",
-  //   },
-  //   appThumbnailUrl: "",
-  //   technologies: [],
-  // },
   {
     title: "Personal Website v1",
     description: "The first iteration of my personal website.",
@@ -98,70 +189,8 @@ export const projects: Project[] = [
       url: "https://github.com/Kertsu/kurtddanielbigtas-v1",
     },
     appThumbnailUrl: "v1.webp",
-    technologies: ["Angular", "CSS"],
+    technologies: [technologies.angular, technologies.css],
   },
 ];
 
-export const technologies: Technology[] = [
-  // Frontend Technologies
-  { name: "HTML", icon: SiHtml5, color: "#E34F26" },
-  { name: "CSS", icon: SiCss3, color: "#1572B6" },
-  { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
-  { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
-  { name: "Angular", icon: SiAngular, color: "#DD1B16" },
-  { name: "React", icon: SiReact, color: "#61DAFB" },
-  { name: "Electron", icon: SiElectron, color: "#47848F" },
-  { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
-
-  // Backend Technologies
-  { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
-  { name: "Express.js", icon: SiExpress, color: "#000000" },
-  { name: "Mongoose", icon: SiMongoose, color: "#880000" },
-  { name: "Prisma", icon: SiPrisma, color: "#2D3748" },
-  { name: "Laravel", icon: SiLaravel, color: "#DD1B16" },
-
-  // Database Technologies
-  { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
-  { name: "MySQL", icon: SiMysql, color: "#4479A1" },
-  { name: "TypeORM", icon: SiTypeorm, color: "#FE0902" },
-
-  // DevOps/Cloud Platforms
-  { name: "Vercel", icon: SiVercel, color: "#000000" },
-  { name: "Netlify", icon: SiNetlify, color: "#00C7B7" },
-  { name: "Render", icon: SiRender, color: "#121212" },
-  { name: "GitHub", icon: SiGithub, color: "#181717" },
-
-  // API & Tools
-  { name: "Postman", icon: SiPostman, color: "#FF6C37" },
-  { name: "Shadcn", icon: SiShadcnui, color: "#000000" },
-  { name: "Git", icon: SiGit, color: "#F05032" },
-  { name: "PrimeNG", icon: SiPrimeng, color: "#DD1B16" },
-  { name: "Framer Motion", icon: SiFramer, color: "#000000" },
-];
-
-export const iconSlugs = [
-  "html",
-  "css",
-  "javascript",
-  "typescript",
-  "angular",
-  "react",
-  "electron",
-  "tailwindcss",
-  "nodejs",
-  "express",
-  "mongoose",
-  "prisma",
-  "laravel",
-  "mongodb",
-  "mysql",
-  "typeorm",
-  "vercel",
-  "netlify",
-  "render",
-  "github",
-  "postman",
-  "shadcn",
-  "git",
-  "primeng",
-]
+export const usedTechnologies = Object.values(technologies).splice(0, Object.values(technologies).length - 3);

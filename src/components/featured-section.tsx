@@ -3,6 +3,7 @@ import { projects, Project as ProjectType } from "../constants";
 import { cn } from "@/lib/utils";
 import { BsBoxArrowUpRight } from "react-icons/bs";
 import { SiGithub } from "react-icons/si";
+import AnimatedGridPattern from "./ui/animated-grid-pattern";
 
 const FeaturedSection = () => {
   return (
@@ -17,13 +18,13 @@ const FeaturedSection = () => {
 
         <ul>
           {projects.map((project, index) => (
-            <li className="mb-10 md:mb-28">
+            <li className="mb-10 md:mb-20">
               <FeaturedProject
                 containerClassName={
-                  index % 2 === 0 ? "md:flex-row-reverse" : "text-right"
+                  index % 2 === 0 ? "lg:flex-row-reverse" : "lg:text-right"
                 }
                 technologiesClassname={
-                  index % 2 === 0 ? "justify-start" : "justify-end"
+                  index % 2 === 0 ? "lg:justify-start" : "lg:justify-end"
                 }
                 key={index}
                 project={project}
@@ -52,15 +53,24 @@ const FeaturedProject = ({
     githubRepository,
     appThumbnailUrl,
     technologies,
-    contributorAvatarUrls,
   } = project;
   return (
     <div
       className={cn(
-        "relative w-full p-4 flex flex-col items-center gap-4 justify-start rounded-lg group md:flex-row",
+        "relative w-full p-10 flex flex-col items-center gap-4 justify-start rounded-lg lg:flex-row overflow-hidden border border-white/10",
         containerClassName
       )}
     >
+      <AnimatedGridPattern
+        numSquares={10}
+        maxOpacity={0.1}
+        duration={3}
+        repeatDelay={1}
+        className={cn(
+          "[mask-image:radial-gradient(700px_circle_at_center,white,transparent)] opacity-50",
+          "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12"
+        )}
+      />
       {/* <DotPattern className="opacity-25" />
        */}
       {/* <div className="absolute h-full w-full bg-[url('grain.webp')] opacity-[0.025] animate-grain pointer-events-none top-0 left-0 rounded-lg"></div> */}
@@ -74,7 +84,7 @@ const FeaturedProject = ({
         viewport={{ once: true }}
         src={appThumbnailUrl}
         alt={title}
-        className="rounded-md object-cover border border-white/10 md:w-1/2 group-hover:shadow-lg"
+        className="rounded-md object-cover border border-white/10  shadow-lg md:w-full lg:w-1/2"
       />
       <div className="w-full flex flex-col h-full justify-between">
         <p className="text-custom-primary tracking-widest my-2">
@@ -83,9 +93,7 @@ const FeaturedProject = ({
         <h1 className="bg-gradient-to-b from-[#fff] to-[#adadad] !bg-clip-text !text-transparent font-bold text-2xl mb-5 md:text-3xl">
           {title}
         </h1>
-        <p className="text-custom-secondary text-base p-6 bg-gradient-to-b from-[#27272741_0.6%] to-[#171717] rounded-md">
-          {description}
-        </p>
+        <p className="text-custom-secondary text-base ">{description}</p>
         <div
           className={cn(
             "flex w-full gap-3 flex-wrap items-center my-6",
@@ -93,10 +101,23 @@ const FeaturedProject = ({
           )}
         >
           {technologies.map((tech, index) => (
-            <span className="text-custom-secondary text-sm" key={index}>
-              {" "}
-              {tech}
-            </span>
+            <div className="relative group p-2 bg-gradient-to-b from-[#27272741_0.6%] to-[#171717] rounded-md">
+              {tech.icon && (
+                <span className="absolute left-1/2 -translate-x-1/2 -top-[calc(100%_+_1rem)] flex justify-center items-center p-1 w-10 h-10 rounded-full bg-white/10 z-10 opacity-0 transition-opacity group-hover:opacity-100">
+                  <tech.icon
+                    className="text-custom-secondary text-2xl"
+                    style={{ color: tech.color }}
+                  />
+                </span>
+              )}
+              <span
+                className="text-custom-secondary text-sm cursor-default"
+                key={index}
+              >
+                {" "}
+                {tech.name}
+              </span>
+            </div>
           ))}
         </div>
 

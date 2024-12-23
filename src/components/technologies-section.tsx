@@ -1,9 +1,8 @@
 import { motion } from "framer-motion";
 import "../styles/technologies.css";
 import { ReactNode, useState } from "react";
-import { technologies, Technology } from "../constants";
+import { Technology, usedTechnologies } from "../constants";
 import { StackBeam } from "./stack-beam";
-import { BorderBeam } from "./ui/border-beam";
 
 const TechnologiesSection = ({ children }: { children?: ReactNode }) => {
   const [currentTech, setCurrentTech] = useState<Technology | null>();
@@ -17,24 +16,6 @@ const TechnologiesSection = ({ children }: { children?: ReactNode }) => {
       id="technologies"
       className="relative flex items-center max-w-[80rem] mx-auto flex-col w-full justify-center mt-40 gap-8 bg-top px-0 md:px-16"
     >
-      {/* <GridPattern
-        squares={[
-          [4, 4],
-          [5, 1],
-          [8, 2],
-          [5, 3],
-          [5, 5],
-          [10, 10],
-          [12, 15],
-          [15, 10],
-          [10, 15],
-          [15, 10],
-          [10, 15],
-          [15, 10],
-        ]}
-        className="[mask-image:radial-gradient(400px_circle_at_center,white,transparent)] inset-x-0 inset-y-[-30%] h-[200%] skew-y-12"
-      /> */}
-
       {/* <motion.div
         initial={{ opacity: 0}}
         whileInView={{ opacity: 1}}
@@ -123,7 +104,7 @@ const TechnologiesSection = ({ children }: { children?: ReactNode }) => {
       >
         <div className="absolute bottom-0 left-0 right-0 top-0 "></div>
         <ul className="w-full flex gap-4 flex-wrap justify-center items-center relative xl:px-12">
-          {technologies.map((tech, index) => {
+          {usedTechnologies.map((tech, index) => {
             return (
               <motion.li
                 initial={{ opacity: 0, y: "-20%" }}
