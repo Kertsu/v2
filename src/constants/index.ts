@@ -98,7 +98,7 @@ export const projects: Project[] = [
     appUrl: "https://kurtddanielbigtas.vercel.app",
     githubRepository: {
       visibility: "private",
-      url: "https://github.com/Kertsu/kurtddanielbigtas",
+      url: "https://github.com/Kertsu/v2",
     },
     appThumbnailUrl: "v2.webp",
     technologies: [
@@ -186,7 +186,7 @@ export const projects: Project[] = [
     description: "The first iteration of my personal website.",
     githubRepository: {
       visibility: "public",
-      url: "https://github.com/Kertsu/kurtddanielbigtas-v1",
+      url: "https://github.com/Kertsu/v1",
     },
     appThumbnailUrl: "v1.webp",
     technologies: [technologies.angular, technologies.css],

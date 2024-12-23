@@ -60,6 +60,10 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
   return (
     <>
       <header
@@ -68,7 +72,7 @@ const Header = () => {
         }`}
       >
         <nav className="px-8 py-4 w-full flex justify-between items-center max-w-[1440px] lg:px-14">
-          <a href="#">
+          <a href="#" onClick={scrollToTop}>
             <motion.img
               viewport={{ once: true }}
               whileInView={{ y: "0%", opacity: 1 }}

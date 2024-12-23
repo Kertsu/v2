@@ -18,7 +18,7 @@ const FeaturedSection = () => {
 
         <ul>
           {projects.map((project, index) => (
-            <li className="mb-10 md:mb-16">
+            <li className="mb-10 md:mb-16" key={index}>
               <FeaturedProject
                 index={index}
                 containerClassName={
@@ -103,12 +103,15 @@ const FeaturedProject = ({
         <p className="text-custom-secondary text-base ">{description}</p>
         <div
           className={cn(
-            "flex w-full gap-3 flex-wrap items-center my-6",
+            "flex w-full gap-2 flex-wrap items-center my-6 md:gap-3",
             technologiesClassname
           )}
         >
           {technologies.map((tech, index) => (
-            <div className="relative group p-2 bg-gradient-to-t from-[#27272741_0.6%] to-[#171717] rounded-md">
+            <div
+              className="relative group p-2 bg-gradient-to-t from-[#27272741_0.6%] to-[#171717] rounded-md"
+              key={index}
+            >
               {/* {tech.icon && (
                 <span className="absolute left-1/2 -translate-x-1/2 -top-[calc(100%_+_1rem)] flex justify-center items-center p-1 w-10 h-10 rounded-full bg-gradient-to-b from-[#27272741_0.6%] to-[#171717] z-10 opacity-0 transition-opacity group-hover:opacity-100">
                   <tech.icon
@@ -117,10 +120,7 @@ const FeaturedProject = ({
                   />
                 </span>
               )} */}
-              <span
-                className="text-custom-secondary text-sm cursor-default"
-                key={index}
-              >
+              <span className="text-custom-secondary text-xs cursor-default md:text-sm">
                 {" "}
                 {tech.name}
               </span>
