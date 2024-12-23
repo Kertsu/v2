@@ -18,7 +18,7 @@ const FeaturedSection = () => {
 
         <ul>
           {projects.map((project, index) => (
-            <li className="mb-10 md:mb-20">
+            <li className="mb-10 md:mb-16">
               <FeaturedProject
                 index={index}
                 containerClassName={
@@ -64,7 +64,7 @@ const FeaturedProject = ({
       transition={{ duration: 0.5, delay: 0.3 + index * 0.05 }}
       viewport={{ once: true }}
       className={cn(
-        "relative w-full p-10 flex flex-col items-center gap-4 justify-start rounded-lg lg:flex-row overflow-hidden border border-white/10",
+        "relative w-full p-4 flex flex-col items-center gap-4 justify-start rounded-lg lg:flex-row overflow-hidden border border-white/10 md:p-10",
         containerClassName
       )}
     >
@@ -108,7 +108,7 @@ const FeaturedProject = ({
           )}
         >
           {technologies.map((tech, index) => (
-            <div className="relative group p-2 bg-gradient-to-b from-[#27272741_0.6%] to-[#171717] rounded-md">
+            <div className="relative group p-2 bg-gradient-to-t from-[#27272741_0.6%] to-[#171717] rounded-md">
               {/* {tech.icon && (
                 <span className="absolute left-1/2 -translate-x-1/2 -top-[calc(100%_+_1rem)] flex justify-center items-center p-1 w-10 h-10 rounded-full bg-gradient-to-b from-[#27272741_0.6%] to-[#171717] z-10 opacity-0 transition-opacity group-hover:opacity-100">
                   <tech.icon
