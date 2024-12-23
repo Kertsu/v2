@@ -20,6 +20,7 @@ const FeaturedSection = () => {
           {projects.map((project, index) => (
             <li className="mb-10 md:mb-20">
               <FeaturedProject
+                index={index}
                 containerClassName={
                   index % 2 === 0 ? "lg:flex-row-reverse" : "lg:text-right"
                 }
@@ -41,10 +42,12 @@ const FeaturedProject = ({
   project,
   containerClassName,
   technologiesClassname,
+  index,
 }: {
   project: ProjectType;
   containerClassName?: string;
   technologiesClassname?: string;
+  index: number;
 }) => {
   const {
     title,
@@ -55,7 +58,11 @@ const FeaturedProject = ({
     technologies,
   } = project;
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.3 + index * 0.05 }}
+      viewport={{ once: true }}
       className={cn(
         "relative w-full p-10 flex flex-col items-center gap-4 justify-start rounded-lg lg:flex-row overflow-hidden border border-white/10",
         containerClassName
@@ -80,7 +87,7 @@ const FeaturedProject = ({
         height={500}
         initial={{ filter: "blur(5px)" }}
         whileInView={{ filter: "blur(0px)" }}
-        transition={{ duration: 0.5, delay: 0.2 }}
+        transition={{ duration: 0.5, delay: 0.5 + index * 0.05 }}
         viewport={{ once: true }}
         src={appThumbnailUrl}
         alt={title}
@@ -102,14 +109,14 @@ const FeaturedProject = ({
         >
           {technologies.map((tech, index) => (
             <div className="relative group p-2 bg-gradient-to-b from-[#27272741_0.6%] to-[#171717] rounded-md">
-              {tech.icon && (
-                <span className="absolute left-1/2 -translate-x-1/2 -top-[calc(100%_+_1rem)] flex justify-center items-center p-1 w-10 h-10 rounded-full bg-white/10 z-10 opacity-0 transition-opacity group-hover:opacity-100">
+              {/* {tech.icon && (
+                <span className="absolute left-1/2 -translate-x-1/2 -top-[calc(100%_+_1rem)] flex justify-center items-center p-1 w-10 h-10 rounded-full bg-gradient-to-b from-[#27272741_0.6%] to-[#171717] z-10 opacity-0 transition-opacity group-hover:opacity-100">
                   <tech.icon
                     className="text-custom-secondary text-2xl"
                     style={{ color: tech.color }}
                   />
                 </span>
-              )}
+              )} */}
               <span
                 className="text-custom-secondary text-sm cursor-default"
                 key={index}
@@ -141,7 +148,7 @@ const FeaturedProject = ({
           </div>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
