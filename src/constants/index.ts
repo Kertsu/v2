@@ -81,7 +81,6 @@ export const technologies = {
   // API & Tools
   postman: { name: "Postman", icon: SiPostman, color: "#FF6C37" },
   shadcnui: { name: "Shadcn UI", icon: SiShadcnui, color: "#000000" },
-  radixui: { name: "Radix UI", icon: SiRadixui, color: "#000000" },
   git: { name: "Git", icon: SiGit, color: "#F05032" },
   primeng: { name: "PrimeNG", icon: SiPrimeng, color: "#DD1B16" },
   framer: { name: "Framer Motion", icon: SiFramer, color: "#000000" },
@@ -89,6 +88,7 @@ export const technologies = {
   pwa: { name: "PWA", icon: SiPwa, color: "#000000" },
   openai: { name: "OpenAI API", icon: SiOpenai, color: "#000000" },
   azle: { name: "Azle", icon: HiQuestionMarkCircle, color: "#000000" },
+  radixui: { name: "Radix UI", icon: SiRadixui, color: "#000000" },
 };
 
 export const projects: Project[] = [
@@ -193,4 +193,4 @@ export const projects: Project[] = [
   },
 ];
 
-export const usedTechnologies = Object.values(technologies).splice(0, Object.values(technologies).length - 3);
+export const usedTechnologies = Object.values(technologies).splice(0, Object.values(technologies).length - 4);

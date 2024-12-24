@@ -24,10 +24,10 @@ const Footer = () => {
         onMouseEnter={() => handleLinkHover(true)}
         onMouseLeave={() => handleLinkHover(false)}
       >
-        <p className="text-sm text-custom-secondary group-hover:text-custom-primary transition-colors">
+        <p className="text-xs text-custom-secondary group-hover:text-custom-primary transition-colors">
           Designed and Built by Kurtd Daniel Bigtas
         </p>
-        <p className="text-sm text-custom-secondary group-hover:text-custom-primary transition-colors">
+        <p className="text-xs text-custom-secondary group-hover:text-custom-primary transition-colors">
           Copyright © 2024 All rights reserved.
         </p>
       </a>

@@ -131,7 +131,7 @@ const TechnologiesSection = ({ children }: { children?: ReactNode }) => {
             <motion.div
               initial={{ left: "45%", opacity: 0 }}
               animate={{ left: "50%", opacity: 1 }}
-              className="absolute top-[calc(50%_+_2rem)] left-1/2 -translate-x-1/2 p-4 flex flex-col items-center justify-center gap-3 opacity-50 xl:top-1/2"
+              className="absolute top-3/4 left-1/2 -translate-x-1/2 p-4 flex flex-col items-center justify-center gap-3 opacity-50 xl:top-1/2"
             >
               <currentTech.icon className="text-[12rem] text-white/80"></currentTech.icon>
               <h3 className="text-xl font-semibold">{currentTech.name}</h3>
