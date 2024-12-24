@@ -195,7 +195,7 @@ const FeaturedProject = ({
         {(appUrl || githubRepository) && (
           <div
             className={cn(
-              "flex w-full gap-6 flex-wrap items-center",
+              "flex w-full gap-6 flex-wrap items-center z-10",
               technologiesClassname
             )}
           >
