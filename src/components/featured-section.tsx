@@ -116,7 +116,7 @@ const FeaturedProject = ({
                   }`}
                   style={{
                     opacity: !hoveredContributor ? 1 : hoveredContributor === contributor ? 1 : 0.5, 
-                    zIndex: !hoveredContributor ? 1 : hoveredContributor === contributor ? 1 : 0.5, 
+                    zIndex: !hoveredContributor ? 2 : hoveredContributor === contributor ? 3 : 2, 
                   }}
                   key={index}
                 >
