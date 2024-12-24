@@ -20,7 +20,7 @@ const FeaturedSection = () => {
 
         <ul>
           {projects.map((project, index) => (
-            <li className="mb-10 md:mb-16" key={index}>
+            <li className="mb-10 md:mb-16 relative" key={index}>
               <FeaturedProject
                 index={index}
                 containerClassName={
@@ -73,20 +73,22 @@ const FeaturedProject = ({
       transition={{ duration: 0.5, delay: 0.3 + index * 0.05 }}
       viewport={{ once: true }}
       className={cn(
-        "relative w-full p-4 flex flex-col items-center gap-4 justify-start rounded-lg lg:flex-row overflow-hidden border border-white/10 md:p-10",
+        "relative w-full p-4 flex flex-col items-center gap-4 justify-start rounded-lg lg:flex-row border border-white/10 md:p-10",
         containerClassName
       )}
     >
-      <AnimatedGridPattern
-        numSquares={10}
-        maxOpacity={0.1}
-        duration={3}
-        repeatDelay={1}
-        className={cn(
-          "[mask-image:radial-gradient(700px_circle_at_center,white,transparent)] opacity-50",
-          "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12"
-        )}
-      />
+      <div className="absolute top-0 left-0 right-0 bottom-0 overflow-hidden">
+        <AnimatedGridPattern
+          numSquares={10}
+          maxOpacity={0.1}
+          duration={3}
+          repeatDelay={1}
+          className={cn(
+            "[mask-image:radial-gradient(700px_circle_at_center,white,transparent)] opacity-50",
+            "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12"
+          )}
+        />
+      </div>
       {/* <DotPattern className="opacity-25" />
        */}
       {/* <div className="absolute h-full w-full bg-[url('grain.webp')] opacity-[0.025] animate-grain pointer-events-none top-0 left-0 rounded-lg"></div> */}
@@ -112,13 +114,14 @@ const FeaturedProject = ({
                   {hoveredContributor === contributor && (
                     <AnimatePresence>
                       <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.15 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.15 }}
+                        className="z-40"
                       >
                         <div className="absolute z-30 w-full bottom-[calc(100%+1rem)] bg-gradient-to-r from-transparent via-emerald-500 to-transparent h-px " />
                         <div className="absolute w-[80%] left-1/2 -translate-x-1/2 z-30 bottom-[calc(100%+1rem)] bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px " />
-                        <div className=" border border-white/10 shadow-[inset_0_0_10px_#ffffff1a] absolute bottom-[calc(100%+1rem)] left-1/2 -translate-x-1/2 p-3 rounded-md bg-gradient-to-b from-[#27272741_0.6%] to-[#171717] w-max opacity-0 transition-opacity group-hover:opacity-100 text-center">
+                        <div className="z-10 border border-white/10 shadow-[inset_0_0_10px_#ffffff1a] absolute bottom-[calc(100%+1rem)] left-1/2 -translate-x-1/2 py-3 px-6 rounded-md bg-gradient-to-b from-[#27272741] to-[#171717] w-max text-center">
                           <h1 className="font-bold">{contributor.name}</h1>
                           <span className="text-xs text-custom-secondary">
                             {contributor.designation}
@@ -142,16 +145,6 @@ const FeaturedProject = ({
                   />
                 </div>
               ))}
-              {/* <AnimatedTooltip
-                items={contributors.map((contributor, index) => {
-                  return {
-                    id: index + 1,
-                    name: contributor.name,
-                    designation: contributor.designation,
-                    image: contributor.avatarUrl,
-                  };
-                })}
-              /> */}
             </div>
           </AnimatePresence>
         )}

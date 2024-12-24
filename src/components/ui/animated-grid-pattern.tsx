@@ -16,6 +16,7 @@ interface AnimatedGridPatternProps {
   maxOpacity?: number;
   duration?: number;
   repeatDelay?: number;
+  clipPathClassName?: string; // Add this prop for external clipping
 }
 
 export default function AnimatedGridPattern({
@@ -29,6 +30,7 @@ export default function AnimatedGridPattern({
   maxOpacity = 0.5,
   duration = 4,
   repeatDelay = 0.5,
+  clipPathClassName, // Pass clip-path-related classes here
   ...props
 }: AnimatedGridPatternProps) {
   const id = useId();
@@ -43,7 +45,6 @@ export default function AnimatedGridPattern({
     ];
   }
 
-  // Adjust the generateSquares function to return objects with an id, x, and y
   function generateSquares(count: number) {
     return Array.from({ length: count }, (_, i) => ({
       id: i,
@@ -51,7 +52,6 @@ export default function AnimatedGridPattern({
     }));
   }
 
-  // Function to update a single square's position
   const updateSquarePosition = (id: number) => {
     setSquares((currentSquares) =>
       currentSquares.map((sq) =>
@@ -60,19 +60,17 @@ export default function AnimatedGridPattern({
               ...sq,
               pos: getPos(),
             }
-          : sq,
-      ),
+          : sq
+      )
     );
   };
 
-  // Update squares to animate in
   useEffect(() => {
     if (dimensions.width && dimensions.height) {
       setSquares(generateSquares(numSquares));
     }
   }, [dimensions, numSquares]);
 
-  // Resize observer to update container dimensions
   useEffect(() => {
     const resizeObserver = new ResizeObserver((entries) => {
       for (let entry of entries) {
@@ -101,6 +99,7 @@ export default function AnimatedGridPattern({
       className={cn(
         "pointer-events-none absolute inset-0 h-full w-full fill-gray-400/30 stroke-gray-400/30",
         className,
+        clipPathClassName // Add optional clipPath here
       )}
       {...props}
     >

@@ -118,7 +118,7 @@ export const projects: Project[] = [
         avatarUrl: "kurtd.jpeg",
         designation: "Full-stack Developer",
       },
-    ]
+    ],
   },
   {
     title: "ConnectED",
@@ -137,6 +137,13 @@ export const projects: Project[] = [
       technologies.typeorm,
       technologies.shadcnui,
       technologies.radixui,
+    ],
+    contributors: [
+      {
+        name: "Kurtd Daniel Bigtas",
+        avatarUrl: "kurtd.jpeg",
+        designation: "Full-stack Developer",
+      },
     ],
   },
   {
@@ -157,6 +164,13 @@ export const projects: Project[] = [
       technologies.socketio,
       technologies.mongodb,
     ],
+    contributors: [
+      {
+        name: "Kurtd Daniel Bigtas",
+        avatarUrl: "kurtd.jpeg",
+        designation: "Full-stack Developer",
+      },
+    ],
   },
   {
     title: "Xplain",
@@ -173,6 +187,13 @@ export const projects: Project[] = [
       technologies.nodejs,
       technologies.express,
       technologies.openai,
+    ],
+    contributors: [
+      {
+        name: "Kurtd Daniel Bigtas",
+        avatarUrl: "kurtd.jpeg",
+        designation: "Full-stack Developer",
+      },
     ],
   },
   {
@@ -192,6 +213,13 @@ export const projects: Project[] = [
       technologies.socketio,
       technologies.mongodb,
     ],
+    contributors: [
+      {
+        name: "Kurtd Daniel Bigtas",
+        avatarUrl: "kurtd.jpeg",
+        designation: "Full-stack Developer",
+      },
+    ],
   },
   {
     title: "Personal Website v1",
@@ -202,7 +230,17 @@ export const projects: Project[] = [
     },
     appThumbnailUrl: "v1.webp",
     technologies: [technologies.angular, technologies.css],
+    contributors: [
+      {
+        name: "Kurtd Daniel Bigtas",
+        avatarUrl: "kurtd.jpeg",
+        designation: "Full-stack Developer",
+      },
+    ],
   },
 ];
 
-export const usedTechnologies = Object.values(technologies).splice(0, Object.values(technologies).length - 4);
+export const usedTechnologies = Object.values(technologies).splice(
+  0,
+  Object.values(technologies).length - 4
+);
