@@ -144,6 +144,26 @@ export const projects: Project[] = [
         avatarUrl: "kurtd.jpeg",
         designation: "Full-stack Developer",
       },
+      {
+        name: "Raven Dela Rama",
+        avatarUrl: "https://res.cloudinary.com/drlztlr1m/image/upload/v1729331139/Hackathon/olsermjsgxepfzalyzur.jpg",
+        designation: "Full-stack Developer",
+      },
+      {
+        name: "Allen Magadia",
+        avatarUrl: "https://res.cloudinary.com/drlztlr1m/image/upload/v1735027541/Hackathon/eqnna3fxoebpd64a1hve.jpg",
+        designation: "UI/UX Designer & Front-end Developer",
+      },
+      {
+        name: "Johnmack Faeldonia",
+        avatarUrl: "https://res.cloudinary.com/drlztlr1m/image/upload/v1729331139/Hackathon/xb9t23uznqfop14olmvl.jpg",
+        designation: "Project Manager & Front-end Developer",
+      },
+      {
+        name: "Jethro Cadang",
+        avatarUrl: "https://res.cloudinary.com/drlztlr1m/image/upload/v1729331140/Hackathon/wpxmy7np9h5dfryp0not.jpg",
+        designation: "Front-end Developer",
+      },
     ],
   },
   {

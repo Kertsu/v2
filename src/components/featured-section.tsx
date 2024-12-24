@@ -110,7 +110,16 @@ const FeaturedProject = ({
           <AnimatePresence>
             <div className="hidden absolute bottom-4 left-4 group-hover:flex">
               {contributors?.map((contributor, index) => (
-                <div className="relative size-10 group" key={index}>
+                <div
+                  className={`relative size-10 group ${
+                    index !== 0 ? "-ml-2" : ""
+                  }`}
+                  style={{
+                    opacity: !hoveredContributor ? 1 : hoveredContributor === contributor ? 1 : 0.5, 
+                    zIndex: !hoveredContributor ? 1 : hoveredContributor === contributor ? 1 : 0.5, 
+                  }}
+                  key={index}
+                >
                   {hoveredContributor === contributor && (
                     <AnimatePresence>
                       <motion.div
@@ -137,9 +146,7 @@ const FeaturedProject = ({
                     whileInView={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 20 }}
                     transition={{ duration: 0.2, delay: 0.2 + index * 0.1 }}
-                    className={`inline-block w-full h-full object-cover rounded-full ring-1 ring-[#171717] ${
-                      index !== 0 ? "-ml-2" : ""
-                    }`}
+                    className="inline-block w-full h-full object-cover rounded-full ring-1 ring-[#171717]"
                     src={contributor.avatarUrl}
                     alt={`${contributor.name}'s avatar`}
                   />
