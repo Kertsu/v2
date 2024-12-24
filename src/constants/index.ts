@@ -31,6 +31,11 @@ import {
   SiOpenai,
 } from "react-icons/si";
 
+export interface Contributor {
+  name: string;
+  avatarUrl: string;
+  designation: string;
+}
 export interface Project {
   title: string;
   description: string;
@@ -38,7 +43,7 @@ export interface Project {
   githubRepository: { visibility: "private" | "public"; url: string };
   appThumbnailUrl: string;
   technologies: Technology[];
-  contributorAvatarUrls?: string[];
+  contributors?: Contributor[];
   narration?: string;
 }
 
@@ -107,6 +112,13 @@ export const projects: Project[] = [
       technologies.tailwindcss,
       technologies.framer,
     ],
+    contributors: [
+      {
+        name: "Kurtd Daniel Bigtas",
+        avatarUrl: "kurtd.jpeg",
+        designation: "Full-stack Developer",
+      },
+    ]
   },
   {
     title: "ConnectED",

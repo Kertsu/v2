@@ -1,9 +1,11 @@
-import { motion } from "framer-motion";
-import { projects, Project as ProjectType } from "../constants";
+import { AnimatePresence, motion } from "framer-motion";
+import { Contributor, projects, Project as ProjectType } from "../constants";
 import { cn } from "@/lib/utils";
 import { BsBoxArrowUpRight } from "react-icons/bs";
 import { SiGithub } from "react-icons/si";
 import AnimatedGridPattern from "./ui/animated-grid-pattern";
+import { useState } from "react";
+// import { AnimatedTooltip } from "./ui/animated-tooltip";
 
 const FeaturedSection = () => {
   return (
@@ -56,7 +58,14 @@ const FeaturedProject = ({
     githubRepository,
     appThumbnailUrl,
     technologies,
+    contributors,
   } = project;
+  const [hoveredContributor, setHoveredContributor] =
+    useState<Contributor | null>(null);
+
+  const handleHoveredContributor = (contributor: Contributor | null) => {
+    setHoveredContributor(contributor);
+  };
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -82,18 +91,73 @@ const FeaturedProject = ({
        */}
       {/* <div className="absolute h-full w-full bg-[url('grain.webp')] opacity-[0.025] animate-grain pointer-events-none top-0 left-0 rounded-lg"></div> */}
 
-      <motion.img
-        width={500}
-        height={500}
-        initial={{ filter: "blur(5px)" }}
-        whileInView={{ filter: "blur(0px)" }}
-        transition={{ duration: 0.5, delay: 0.5 + index * 0.05 }}
-        viewport={{ once: true }}
-        src={appThumbnailUrl}
-        alt={title}
-        className="rounded-md object-cover border border-white/10  shadow-lg md:w-full lg:w-1/2"
-      />
-      <div className="w-full flex flex-col h-full justify-between">
+      <div className="relative md:w-full lg:w-1/2 group">
+        <motion.img
+          width={500}
+          height={500}
+          initial={{ filter: "blur(5px)" }}
+          whileInView={{ filter: "blur(0px)" }}
+          transition={{ duration: 0.5, delay: 0.5 + index * 0.05 }}
+          viewport={{ once: true }}
+          src={appThumbnailUrl}
+          alt={title}
+          className="rounded-md object-cover border border-white/10 shadow-lg w-full"
+        />
+        <div className="absolute bg-black/40 top-0 left-0 right-0 bottom-0 transition-opacity rounded-md opacity-0 group-hover:opacity-100"></div>
+        {contributors && (
+          <AnimatePresence>
+            <div className="hidden absolute bottom-4 left-4 group-hover:flex">
+              {contributors?.map((contributor, index) => (
+                <div className="relative size-10 group" key={index}>
+                  {hoveredContributor === contributor && (
+                    <AnimatePresence>
+                      <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.15 }}
+                      >
+                        <div className="absolute z-30 w-full bottom-[calc(100%+1rem)] bg-gradient-to-r from-transparent via-emerald-500 to-transparent h-px " />
+                        <div className="absolute w-[80%] left-1/2 -translate-x-1/2 z-30 bottom-[calc(100%+1rem)] bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px " />
+                        <div className=" border border-white/10 shadow-[inset_0_0_10px_#ffffff1a] absolute bottom-[calc(100%+1rem)] left-1/2 -translate-x-1/2 p-3 rounded-md bg-gradient-to-b from-[#27272741_0.6%] to-[#171717] w-max opacity-0 transition-opacity group-hover:opacity-100 text-center">
+                          <h1 className="font-bold">{contributor.name}</h1>
+                          <span className="text-xs text-custom-secondary">
+                            {contributor.designation}
+                          </span>
+                        </div>
+                      </motion.div>
+                    </AnimatePresence>
+                  )}
+                  <motion.img
+                    onMouseEnter={() => handleHoveredContributor(contributor)}
+                    onMouseLeave={() => handleHoveredContributor(null)}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 20 }}
+                    transition={{ duration: 0.2, delay: 0.2 + index * 0.1 }}
+                    className={`inline-block w-full h-full object-cover rounded-full ring-1 ring-[#171717] ${
+                      index !== 0 ? "-ml-2" : ""
+                    }`}
+                    src={contributor.avatarUrl}
+                    alt={`${contributor.name}'s avatar`}
+                  />
+                </div>
+              ))}
+              {/* <AnimatedTooltip
+                items={contributors.map((contributor, index) => {
+                  return {
+                    id: index + 1,
+                    name: contributor.name,
+                    designation: contributor.designation,
+                    image: contributor.avatarUrl,
+                  };
+                })}
+              /> */}
+            </div>
+          </AnimatePresence>
+        )}
+      </div>
+
+      <div className="w-full flex flex-col h-full justify-between  md:w-full lg:w-1/2">
         <p className="text-custom-primary tracking-widest my-2">
           Featured Project
         </p>
@@ -109,7 +173,7 @@ const FeaturedProject = ({
         >
           {technologies.map((tech, index) => (
             <div
-              className="relative group p-2 bg-gradient-to-t from-[#27272741_0.6%] to-[#171717] rounded-md"
+              className="relative p-2 bg-gradient-to-t from-[#27272741_0.6%] to-[#171717] rounded-md"
               key={index}
             >
               {/* {tech.icon && (

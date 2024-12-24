@@ -32,7 +32,7 @@ const HeroSection = () => {
             whileInView={{ y: "0%", opacity: 1 }}
             initial={{ y: "45%", opacity: 0 }}
             transition={{ duration: 0.3, delay: 1.2 }}
-            className="text-3xl font-bold text-custom-secondary bg-gradient-to-t from-[#007bff] to-[#007bff] bg-clip-text text-transparent md:text-6xl xl:text-7xl"
+            className="text-3xl font-bold text-custom-secondary bg-gradient-to-b from-[#007bff] to-emerald-500 bg-clip-text text-transparent md:text-6xl xl:text-7xl"
           >
             I turn caffeine into websites.
           </motion.h1>

@@ -6,12 +6,12 @@ const ContactSection = () => {
       id="contact"
       className="relative flex items-center mx-auto max-w-[80rem] flex-col w-full justify-center  md:px-16 md:pt-0 px-8"
     >
-      <div className="flex flex-col justify-center items-center gap-3 text-center">
-        <h1 className="text-2xl font-bold md:text-5xl xl:text-6xl bg-gradient-to-b from-[#fff] to-[#adadad] !bg-clip-text !leading-normal !text-transparent">
+      <div className="flex flex-col justify-center items-center gap-6 text-center mg:gap-3">
+        <h1 className="text-3xl font-bold md:text-5xl xl:text-6xl bg-gradient-to-b from-[#fff] to-[#adadad] !bg-clip-text !leading-normal !text-transparent">
           Get In Touch
         </h1>
 
-        <p className="text-custom-secondary w-[55%]">
+        <p className="text-custom-secondary w-full lg:w-[55%]">
         Although I am not actively seeking new opportunities at the moment, my inbox is <span className="text-custom-primary">always open</span>. Feel free to reach out if you have any questions or just want to say hi! 🚀
         </p>
 
