@@ -163,13 +163,13 @@ const Header = () => {
   return (
     <>
       <header
-        className={`fixed top-4 border-white/10 border z-20 w-[80%] flex justify-center items-center backdrop-blur-md transition-all shadow-lg left-1/2 -translate-x-1/2 rounded-full md:w-1/2 lg:w-1/3 xl:max-w-md ${
+        className={`fixed top-4 border-white/10 border z-20 w-[80%] flex justify-center items-center backdrop-blur-md transition-all shadow-lg left-1/2 -translate-x-1/2 rounded-xl md:w-1/2 lg:w-1/3 xl:max-w-md ${
           isHeaderVisible ? "translate-y-0" : "-translate-y-[calc(100%+1rem)]"
         }`}
       >
         <nav className="px-8 py-6 w-full flex justify-center items-center lg:px-14 xl:p-4">
           <ul className="flex items-center gap-8">
-            <a className=" hidden md:block" onClick={scrollToTop}>
+            <a className=" hidden md:block md:cursor-pointer" onClick={scrollToTop}>
               <motion.img
                 viewport={{ once: true }}
                 whileInView={{ y: "0%", opacity: 1 }}
