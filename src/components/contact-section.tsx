@@ -48,7 +48,7 @@ const ContactSection = () => {
           whileInView={{ y: "0%", opacity: 1 }}
           initial={{ y: "45%", opacity: 0 }}
           transition={{ duration: 0.3, delay: 0.435 }}
-          className="text-custom-secondary w-full lg:w-[55%] mt-6"
+          className="text-custom-secondary w-full lg:w-[55%] mt-6 xl:hidden"
         >
           Not a fan of emails? Let's be socials instead
         </motion.span>
@@ -58,7 +58,7 @@ const ContactSection = () => {
           whileInView={{ y: "0%", opacity: 1 }}
           initial={{ y: "45%", opacity: 0 }}
           transition={{ duration: 0.3, delay: 0.485 }}
-          className="flex gap-8 items-center"
+          className="flex gap-8 items-center xl:hidden"
         >
           {socmedLinks.map((link, index) => (
             <li key={index}>
