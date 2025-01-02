@@ -1,8 +1,8 @@
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
-import { SiFacebook, SiGithub, SiInstagram } from "react-icons/si";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { handleScroll } from "../lib/ui-service";
+import { socmedLinks } from "@/constants/constants";
 
 interface NavLink {
   targetId: string
@@ -15,27 +15,6 @@ const navLinks: NavLink[] = [
   { targetId: 'about', href: "#about", label: "About", transitionDelay: 0.6 },
   { targetId: 'featured', href: "#featured", label: "Featured", transitionDelay: 0.7 },
   { targetId: 'contact', href: "#contact", label: "Contact", transitionDelay: 0.8 },
-];
-
-const socmedLinks = [
-  {
-    href: "https://www.facebook.com/Kertsuuu",
-    icon: (
-      <SiFacebook className="text-custom-secondary hover:text-custom-primary text-xl hover:scale-105 hover:-translate-y-1 ease-linear transition-transform" />
-    ),
-  },
-  {
-    href: "https://github.com/Kertsu",
-    icon: (
-      <SiGithub className="text-custom-secondary hover:text-custom-primary text-xl hover:scale-105 hover:-translate-y-1 ease-linear transition-transform" />
-    ),
-  },
-  {
-    href: "https://www.instagram.com/_kertsu",
-    icon: (
-      <SiInstagram className="text-custom-secondary hover:text-custom-primary text-xl hover:scale-105 hover:-translate-y-1 ease-linear transition-transform" />
-    ),
-  },
 ];
 
 const Header = () => {
@@ -94,7 +73,7 @@ const Header = () => {
                 transition={{ duration: 0.3, delay: link.transitionDelay }}
               >
                 <a onClick={(e) => handleScroll(e, link.targetId)}
-                  className="text-custom-secondary hover:text-custom-primary/80 text-sm"
+                  className="text-custom-secondary hover:bg-gradient-to-b from-[#007bff] to-[#99caff] hover:bg-clip-text hover:text-transparent text-sm"
                   href={link.href}
                 >
                   {link.label}

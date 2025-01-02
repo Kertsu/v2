@@ -1,4 +1,4 @@
-import { technologies } from "@/constants";
+import { technologies } from "@/constants/constants";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 
@@ -34,7 +34,7 @@ const Footer = () => {
 
       {footerIconsShown && (
         <AnimatePresence>
-          <div className="w-full flex flex-col gap-3 items-center justify-center absolute left-1/2 -translate-x-1/2 bottom-[calc(100%-.5rem)]">
+          <div className="w-full flex flex-col gap-3 items-center justify-center absolute left-1/2 -translate-x-1/2 bottom-[calc(100%-.5rem)] px-3">
             <motion.span
               whileInView={{ opacity: 1, y: 0 }}
               initial={{ opacity: 0, y: 20 }}

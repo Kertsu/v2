@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { Contributor, projects, Project as ProjectType } from "../constants";
+import { Contributor, projects, Project as ProjectType } from "@/constants/constants";
 import { cn } from "@/lib/utils";
 import { BsBoxArrowUpRight } from "react-icons/bs";
 import { SiGithub } from "react-icons/si";

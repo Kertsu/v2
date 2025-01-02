@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import "../styles/technologies.css";
 import { ReactNode, useState } from "react";
-import { Technology, usedTechnologies } from "../constants";
+import { Technology, usedTechnologies } from "@/constants/constants";
 import { StackBeam } from "./stack-beam";
 
 const TechnologiesSection = ({ children }: { children?: ReactNode }) => {

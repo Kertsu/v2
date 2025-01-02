@@ -29,6 +29,8 @@ import {
   SiPwa,
   SiSocketdotio,
   SiOpenai,
+  SiFacebook,
+  SiInstagram,
 } from "react-icons/si";
 
 export interface Contributor {
@@ -264,3 +266,25 @@ export const usedTechnologies = Object.values(technologies).splice(
   0,
   Object.values(technologies).length - 4
 );
+
+
+export const socmedLinks = [
+  {
+    href: "https://www.facebook.com/Kertsuuu",
+    icon: (
+      <SiFacebook className="text-custom-secondary hover:text-custom-primary text-3xl hover:scale-105 hover:-translate-y-1 ease-linear transition-transform xl:text-xl" />
+    ),
+  },
+  {
+    href: "https://github.com/Kertsu",
+    icon: (
+      <SiGithub className="text-custom-secondary hover:text-custom-primary text-3xl hover:scale-105 hover:-translate-y-1 ease-linear transition-transform xl:text-xl" />
+    ),
+  },
+  {
+    href: "https://www.instagram.com/_kertsu",
+    icon: (
+      <SiInstagram className="text-custom-secondary hover:text-custom-primary text-3xl hover:scale-105 hover:-translate-y-1 ease-linear transition-transform xl:text-xl" />
+    ),
+  },
+];

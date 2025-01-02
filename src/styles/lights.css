@@ -9,27 +9,29 @@
   border-radius: inherit;
   transition: all 1s ease;
 }
+
+
 .light::before {
   background: #007bff;
-  box-shadow: 0 0 2px 1px #3291ff40;
+  box-shadow: 0 0 2px 1px #99caff;
   opacity: 1;
 }
 .light::after {
   background: #fff;
   opacity: 1;
-  box-shadow: 0 0 2px 2px #007bff, 0 0 2px 1px #3291ff40;
+  box-shadow: 0 0 2px 2px #007bff, 0 0 2px 1px #99caff;
 }
 
 @media screen and (min-width: 1920px) {
   .light::before {
     background: #007bff;
-    box-shadow: 0 0 3px 2px #3291ff40;
+    box-shadow: 0 0 3px 2px #99caff;
     opacity: 1;
   }
   .light::after {
     background: #fff;
     opacity: 1;
-    box-shadow: 0 0 3px 3px #007bff, 0 0 3px 2px #3291ff40;
+    box-shadow: 0 0 3px 3px #007bff, 0 0 3px 2px #99caff;
   }
 }
 

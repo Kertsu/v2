@@ -62,7 +62,7 @@ const AboutMeSection = () => {
                 >
                   <p className="text-sm text-custom-secondary md:text-base">
                     Hello! My name is{" "}
-                    <span className="text-custom-primary">
+                    <span className="bg-gradient-to-b from-[#007bff] to-[#99caff] bg-clip-text text-transparent">
                       Kurtd Daniel Bigtas
                     </span>
                     . My interest in web development started back in my second
