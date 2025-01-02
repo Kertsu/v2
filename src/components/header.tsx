@@ -2,7 +2,6 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { handleScroll } from "../lib/ui-service";
-import { socmedLinks } from "@/constants/constants";
 
 interface NavLink {
   targetId: string;
@@ -163,7 +162,7 @@ const Header = () => {
   return (
     <>
       <header
-        className={`fixed top-4 border-white/10 border z-20 w-[80%] flex justify-center items-center backdrop-blur-md transition-all shadow-lg left-1/2 -translate-x-1/2 rounded-xl md:w-1/2 lg:w-1/3 xl:max-w-md ${
+        className={`fixed top-4 border-white/10 border z-20 w-[80%] flex justify-center items-center backdrop-blur-md transition-all shadow-lg left-1/2 -translate-x-1/2 rounded-full md:w-1/2 lg:w-1/3 xl:max-w-md ${
           isHeaderVisible ? "translate-y-0" : "-translate-y-[calc(100%+1rem)]"
         }`}
       >
@@ -201,27 +200,7 @@ const Header = () => {
         </nav>
       </header>
 
-      <motion.div
-        viewport={{ once: true }}
-        whileInView={{ opacity: 1 }}
-        initial={{ opacity: 0 }}
-        transition={{ duration: 0.3, delay: 0.8 }}
-        className="hidden fixed left-14 bottom-0 z-10 xl:block"
-      >
-        <div className="flex flex-col w-max items-center gap-6">
-          <ul className="flex flex-col gap-8 items-center">
-            {socmedLinks.map((link, index) => (
-              <li key={index}>
-                <a target="_blank" href={link.href}>
-                  {link.icon}
-                </a>
-              </li>
-            ))}
-          </ul>
-
-          <div className="h-[90px] w-[.5px] border border-white/20"></div>
-        </div>
-      </motion.div>
+      
     </>
   );
 };
