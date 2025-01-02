@@ -104,7 +104,7 @@ export const projects: Project[] = [
     description: "The second iteration of my personal website.",
     appUrl: "https://kurtddanielbigtas.vercel.app",
     githubRepository: {
-      visibility: "private",
+      visibility: "public",
       url: "https://github.com/Kertsu/v2",
     },
     appThumbnailUrl: "v2.webp",
@@ -193,6 +193,7 @@ export const projects: Project[] = [
         designation: "Full-stack Developer",
       },
     ],
+    appUrl: 'https://k-whisper.vercel.app/u/kertsu'
   },
   {
     title: "Xplain",
