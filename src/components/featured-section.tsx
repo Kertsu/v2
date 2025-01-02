@@ -8,6 +8,14 @@ import { useState } from "react";
 // import { AnimatedTooltip } from "./ui/animated-tooltip";
 
 const FeaturedSection = () => {
+  const [hoveredProject, setHoveredProject] = useState<ProjectType | null>(
+    null
+  );
+
+  const handleHoveredProject = (project: ProjectType | null) => {
+    setHoveredProject(project);
+  };
+
   return (
     <motion.section
       id="featured"
@@ -20,7 +28,15 @@ const FeaturedSection = () => {
 
         <ul>
           {projects.map((project, index) => (
-            <li className="mb-10 md:mb-16 relative" key={index}>
+            <li
+              className={cn("mb-10 md:mb-16 relative transition-opacity", {
+                "opacity-40": hoveredProject && hoveredProject !== project,
+                "opacity-100": !hoveredProject || hoveredProject === project,
+              })}
+              key={index}
+              onMouseEnter={() => handleHoveredProject(project)}
+              onMouseLeave={() => handleHoveredProject(null)}
+            >
               <FeaturedProject
                 index={index}
                 containerClassName={
@@ -66,6 +82,7 @@ const FeaturedProject = ({
   const handleHoveredContributor = (contributor: Contributor | null) => {
     setHoveredContributor(contributor);
   };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -73,7 +90,7 @@ const FeaturedProject = ({
       transition={{ duration: 0.5, delay: 0.3 + index * 0.05 }}
       viewport={{ once: true }}
       className={cn(
-        "relative w-full p-4 flex flex-col items-center gap-4 justify-start rounded-lg lg:flex-row border border-white/10 md:p-10",
+        "relative w-full p-4 flex flex-col items-center gap-4 justify-start rounded-lg lg:flex-row border border-white/10 md:p-10 hover:shadow-[inset_0_0_10px_#ffffff1a]",
         containerClassName
       )}
     >
@@ -115,8 +132,16 @@ const FeaturedProject = ({
                     index !== 0 ? "-ml-2" : ""
                   }`}
                   style={{
-                    opacity: !hoveredContributor ? 1 : hoveredContributor === contributor ? 1 : 0.5, 
-                    zIndex: !hoveredContributor ? 2 : hoveredContributor === contributor ? 3 : 2, 
+                    opacity: !hoveredContributor
+                      ? 1
+                      : hoveredContributor === contributor
+                      ? 1
+                      : 0.5,
+                    zIndex: !hoveredContributor
+                      ? 2
+                      : hoveredContributor === contributor
+                      ? 3
+                      : 2,
                   }}
                   key={index}
                 >
