@@ -28,7 +28,7 @@ const Footer = () => {
           Designed and Built by Kurtd Daniel Bigtas
         </p>
         <p className="text-xs text-custom-secondary group-hover:text-custom-primary transition-colors">
-          Copyright © 2024 All rights reserved.
+          Copyright © {new Date().getFullYear()} All rights reserved.
         </p>
       </a>
 
