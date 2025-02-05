@@ -102,7 +102,7 @@ export const projects: Project[] = [
   {
     title: "Personal Website v2",
     description: "The second iteration of my personal website.",
-    appUrl: "https://kurtddanielbigtas.vercel.app",
+    appUrl: "https://v2-kurtddanielbigtas.vercel.app",
     githubRepository: {
       visibility: "public",
       url: "https://github.com/Kertsu/v2",
