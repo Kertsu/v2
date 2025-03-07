@@ -50,7 +50,7 @@ const HeroSection = () => {
           </motion.p>
 
           <motion.button
-            className="transition-all px-8 py-2 rounded-md w-max border border-white/10 mt-8 bg-gradient-to-b from-[#27272741_0.9%] to-[#171717] group hover:shadow-[inset_0_0_10px_#ffffff1a] hover:border-white/20 xl:px-10 xl:py-4"
+            className="px-8 py-2 rounded-md w-max border border-white/10 mt-8 bg-gradient-to-b from-[#27272741_0.9%] to-[#171717] group hover:shadow-[inset_0_0_10px_#ffffff1a] hover:border-white/20 xl:px-10 xl:py-4"
             viewport={{ once: true }}
             whileInView={{ y: "0%", opacity: 1 }}
             initial={{ y: "45%", opacity: 0 }}
